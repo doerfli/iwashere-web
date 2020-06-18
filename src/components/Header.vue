@@ -6,7 +6,7 @@
                     <span class="icon has-text-primary">
                         <i class="fas fa-2x fa-file-contract is-primary"></i>
                     </span>
-                    <h1 class="title is-2 has-text-primary">Iwashere</h1>
+                    <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}</h1>
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">

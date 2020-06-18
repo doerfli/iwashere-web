@@ -4,10 +4,10 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
-            Iwashere
+            {{ $t("title.home")}}
           </h1>
           <h2 class="subtitle">
-            Einfaches Contact Tracing in 4 Schritten
+            {{ $t("title.home_sub")}}
           </h2>
         </div>
       </div>

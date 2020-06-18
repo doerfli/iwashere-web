@@ -1,0 +1,19 @@
+{
+  "title": {
+    "application": "Ich war da",
+    "home": "Willkommen bei Ich war da",
+    "home_sub": "Einfaches Contact Tracing in 5 Schritten",
+    "login": "Anmeldung"
+  },
+  "login": {
+    "username": {
+      "label": "Benutzername",
+      "hint": "Geben Sie hier Ihren Benutzernamen ein"
+    },
+    "password": {
+      "label": "Passwort",
+      "hint": "Geben Sie hier Ihr Passwort ein"
+    },
+    "loginbutton": "Anmelden"
+  }
+}

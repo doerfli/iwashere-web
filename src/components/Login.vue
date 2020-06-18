@@ -2,12 +2,11 @@
     <div>
         <div class="columns">
             <div class="column is-half">
-                <h1 class="title is-3">Login</h1>
                 <div class="loginform">
                     <div class="field">
-                        <label class="label">Username</label>
+                        <label class="label">{{$t('login.username.label')}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input" type="text" placeholder="Enter your username ..."
+                            <input class="input" type="text" :placeholder="$t('login.username.hint')"
                                    v-model="username">
                             <span class="icon is-small is-left">
                               <i class="fas fa-user"></i>
@@ -15,9 +14,9 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Password</label>
+                        <label class="label">{{$t('login.password.label')}}</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input" type="text" placeholder="Enter your password ..."
+                            <input class="input" type="text" :placeholder="$t('login.password.hint')"
                                    v-model="password">
                             <span class="icon is-small is-left">
                               <i class="fas fa-key"></i>
@@ -27,7 +26,7 @@
                     <div class="field">
                         <p class="control">
                             <button class="button is-primary" v-on:click="login">
-                                Login
+                                {{ $t("login.loginbutton")}}
                             </button>
                         </p>
                     </div>
