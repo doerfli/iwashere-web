@@ -9,7 +9,7 @@ Vue.use(VueI18n);
 const i18n = new VueI18n({
   messages,
   locale: defaultLocale,
-  fallbackLocale: defaultLocale
+  fallbackLocale: defaultLocale,
 });
 
 Vue.config.productionTip = false;

@@ -47,10 +47,7 @@
         private login() {
           // TODO validate input
           this.$store.dispatch("account/login", {username: this.username, password: this.password}).then((result) => {
-            console.log("login success:" + result);
-            if (!result) {
-              this.password = '';
-            }
+            this.password = '';
           });
         }
     }

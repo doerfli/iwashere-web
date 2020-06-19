@@ -1,4 +1,5 @@
 {
+  "umlaute": "ä ö ü Ä Ö Ü",
   "title": {
     "application": "Ich war da",
     "home": "Willkommen bei Ich war da",
@@ -15,5 +16,26 @@
       "hint": "Geben Sie hier Ihr Passwort ein"
     },
     "loginbutton": "Anmelden"
+  },
+  "locations": {
+    "title": {
+      "list":"Lokale",
+      "new": "Lokal erfassen"
+    },
+    "actions": {
+      "new": "Neues Lokal erfassen"
+    },
+    "name": "Name",
+    "shortname": "Kurzbezeichnung",
+    "shortname_hint": "Diese Bezeichnung erscheint im Link den die Kunden benutzen",
+    "shortname_not_available": "Diese Kurzbezeichnung ist nicht verfügbar",
+    "street": "Strasse",
+    "zip": "Postleitzahl",
+    "city": "Stadt",
+    "country": "Land"
+  },
+  "actions": {
+    "save": "Speichern",
+    "cancel": "Abbrechen"
   }
 }
