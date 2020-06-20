@@ -1,5 +1,5 @@
 interface LocationEntity {
-  id: string;
+  id: string | null;
   name: string;
   shortname: string;
   street: string;
