@@ -1,55 +1,14 @@
 <template>
     <div>
-        <div class="field">
-            <label class="label">{{$t("locations.name")}}</label>
-            <div class="control">
-                <input class="input" type="text"
-                       v-model="name"
-                       v-on:change="validate()">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">{{$t("locations.shortname")}}</label>
-            <div class="control">
-                <input v-bind:class="{input:true,'is-danger':!shortnameAvailable}" type="text"
-                       v-model="shortname"
-                       v-on:change="checkShortname() && validate()">
-            </div>
-            <p class="help is-danger" v-if="!shortnameAvailable">{{$t("locations.shortname_not_available")}}</p>
-            <p class="help is-info">{{$t("locations.shortname_hint")}} - http://bladiblubb.com/#/v/{{this.shortname}}/</p>
-        </div>
-        <div class="field">
-            <label class="label">{{$t("locations.street")}}</label>
-            <div class="control">
-                <input class="input" type="text"
-                       v-model="street"
-                       v-on:change="validate()">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">{{$t("locations.zip")}}</label>
-            <div class="control">
-                <input class="input" type="text"
-                       v-model="zip"
-                       v-on:change="validate()">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">{{$t("locations.city")}}</label>
-            <div class="control">
-                <input class="input" type="text"
-                       v-model="city"
-                       v-on:change="validate()">
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">{{$t("locations.country")}}</label>
-            <div class="control">
-                <input class="input" type="text"
-                       v-model="country"
-                       v-on:change="validate()">
-            </div>
-        </div>
+        <TextInputField :label="$t('locations.name')" v-model="name" v-on:inputchanged="validate()"/>
+        <TextInputField :label="$t('locations.shortname')" v-model="shortname" v-on:inputchanged="checkShortname() && validate()"
+                    :info-text="$t('locations.shortname_hint') + ' - http:\/\/bladiblubb.com\/#\/v\/' + this.shortname + '/'"
+                    :error-text="$t('locations.shortname_not_available')" v-bind:show-error-text="!shortnameAvailable"
+        />
+        <TextInputField :label="$t('locations.street')" v-model="street" v-on:inputchanged="validate()"/>
+        <TextInputField :label="$t('locations.zip')" v-model="zip" v-on:inputchanged="validate()"/>
+        <TextInputField :label="$t('locations.city')" v-model="city" v-on:inputchanged="validate()"/>
+        <TextInputField :label="$t('locations.country')" v-model="country" v-on:inputchanged="validate()"/>
         <div class="field is-grouped">
             <div class="control">
                 <button class="button is-link" v-on:click="save()" v-bind:disabled="!formValid">{{$t("actions.save")}}</button>
@@ -65,8 +24,10 @@
   import {Component, Vue} from 'vue-property-decorator';
   import {request} from '@/superagent';
   import router from '@/router';
-
-  @Component
+  import TextInputField from '@/components/form/TextInputField.vue';
+  @Component({
+    components: {TextInputField}
+  })
   export default class NewLocation extends Vue {
     private name: string = "";
     private shortname: string = "";
@@ -91,6 +52,7 @@
     }
 
     private async validate() {
+      console.log("validate");
       this.formValid =
         this.name !== ""
         && this.shortnameAvailable
