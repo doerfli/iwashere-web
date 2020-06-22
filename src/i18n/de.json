@@ -36,6 +36,17 @@
   },
   "actions": {
     "save": "Speichern",
-    "cancel": "Abbrechen"
+    "cancel": "Abbrechen",
+    "register": "Registrieren"
+  },
+  "visit": {
+    "title": {
+      "welcome": "Willkommen im {name}",
+      "registration": "Registrierung ihres Besuchs"
+    },
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "phone": "Telefonnummer",
+    "email": "E-Mail"
   }
 }
