@@ -59,14 +59,14 @@
       form.append('password', this.password);
       try {
         const response = await superagent.post('/api/login').send(form);
-        console.log(response);
+        // console.log(response);
         if (response.status === 200) {
           router.push({name: 'Locations'});
         } else {
           this.showLoginError = true;
         }
       } catch (e) {
-        console.log(e);
+        // console.log(e);
         this.showLoginError = true;
       }
     }
