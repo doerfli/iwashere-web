@@ -3,7 +3,9 @@
         <div class="container">
             <h1 class="title">{{$t("locations.title.list")}}</h1>
             <Locations />
-            <button class="button is-primary" v-on:click="navNewLocations()">{{$t("locations.actions.new")}}</button>
+            <router-link to="/locations/new">
+                <button class="button is-primary">{{$t("locations.actions.new")}}</button>
+            </router-link>
         </div>
     </section>
 </template>
