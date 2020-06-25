@@ -15,7 +15,9 @@
       "label": "Passwort",
       "hint": "Geben Sie hier Ihr Passwort ein"
     },
-    "loginbutton": "Anmelden"
+    "loginbutton": "Anmelden",
+    "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
+    "login_error": "Der Benutzername oder das Passwort waren falsch. Bitte versuchen Sie es noch einmal."
   },
   "locations": {
     "title": {
