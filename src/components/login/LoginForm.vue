@@ -17,6 +17,10 @@
       {{$t('login.login_error')}}
     </div>
     <Button :title="$t('login.loginbutton')" v-on:click="login" />
+
+    <router-link to="/signup">
+      {{$t('login.signup_link')}}
+    </router-link>
   </div>
 </template>
 

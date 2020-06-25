@@ -13,18 +13,35 @@
       </div>
     </section>
     <section class="container">
+      <div class="notification is-info" v-if="showSignupSuccess">
+        {{$t('home.signup_success')}}
+      </div>
       <Login />
     </section>
   </div>
 </template>
 
-<script>
-  import Login from '@/components/login/Login';
+<script lang="ts">
+  import {Vue} from "vue-property-decorator";
+  import Component from 'vue-class-component';
+  import Login from '@/components/login/Login.vue';
 
-  export default {
-    name: 'Home',
-    components: {
-      Login,
-    },
-  };
+  @Component({
+      components: {
+          Login
+      }
+  })
+  export default class Home extends Vue {
+    private showSignupSuccess: boolean = false;
+
+    public mounted() {
+      console.log(this.$route.query);
+      if (this.$route.query.signup === "true") {
+        this.showSignupSuccess = true;
+      }
+    }
+  }
+
+
+  //
 </script>

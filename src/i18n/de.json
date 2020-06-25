@@ -4,7 +4,11 @@
     "application": "Ich war da",
     "home": "Willkommen bei Ich war da",
     "home_sub": "Einfaches Contact Tracing in 5 Schritten",
-    "login": "Anmeldung"
+    "login": "Anmeldung",
+    "signup": "Neues Konto erstellen"
+  },
+  "home": {
+    "signup_success": "Ihr neues Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen."
   },
   "login": {
     "username": {
@@ -17,7 +21,27 @@
     },
     "loginbutton": "Anmelden",
     "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
-    "login_error": "Der Benutzername oder das Passwort waren falsch. Bitte versuchen Sie es noch einmal."
+    "login_error": "Der Benutzername oder das Passwort waren falsch. Bitte versuchen Sie es noch einmal.",
+    "signup_link": "Neues Konto erstellen"
+  },
+  "signup": {
+    "username": {
+      "label": "E-Mail Adresse",
+      "hint": "Ihre E-Mail Adresse ist ihr Benutzername"
+    },
+    "password": {
+      "label": "Passwort",
+      "hint": "Geben Sie hier Ihr Passwort ein"
+    },
+    "passwordConfirmation": {
+      "label": "Passwort bestätigen",
+      "hint": "Geben Sie Ihr Passwort noch einmal zur Bestätigung ein"
+    },
+    "submitButton": "Anmelden",
+    "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
+    "passwords_dontmatch": "Die eingegebenen Passwörter stimmen nicht überein. Bitte versuchen Sie es noch einmal.",
+    "signup_error": "Während der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es noch einmal.",
+    "email_invalid": "Bitte geben Sie eine gültige E-Mail Adresse ein."
   },
   "locations": {
     "title": {
