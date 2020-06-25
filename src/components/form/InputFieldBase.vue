@@ -56,5 +56,11 @@
     protected getIconLeftClasses() {
       return `fas fa-${this.iconLeft}`;
     }
+
+    protected submitOnEnter(event: KeyboardEvent) {
+      if (event.key === 'Enter') {
+        this.$emit('enterPressed');
+      }
+    }
   }
 </script>

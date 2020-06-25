@@ -3,10 +3,12 @@
     <TextInputField :label="$t('login.username.label')" :hint-text="$t('login.username.hint')"
                     icon-left="user"
                     v-model="username"
+                    v-on:enterPressed="login"
     />
     <PasswordInputField :label="$t('login.password.label')" :hint-text="$t('login.password.hint')"
                         icon-left="key"
                         v-model="password"
+                        v-on:enterPressed="login"
     />
     <Button :title="$t('login.loginbutton')" v-on:click="login" />
   </div>
