@@ -70,8 +70,7 @@
       "welcome": "Willkommen im {name}",
       "registration": "Registrierung ihres Besuchs"
     },
-    "firstname": "Vorname",
-    "lastname": "Nachname",
+    "name": "Name",
     "phone": "Telefonnummer",
     "email": "E-Mail",
     "email_not_valid": "Diese E-Mail Adresse ist ungültig",

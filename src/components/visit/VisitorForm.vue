@@ -1,7 +1,6 @@
 <template>
     <div>
-        <TextInputField :label="$t('visit.firstname')" v-model="firstname" v-on:inputchanged="$emit('formchanged')"/>
-        <TextInputField :label="$t('visit.lastname')" v-model="lastname" v-on:inputchanged="$emit('formchanged')"/>
+        <TextInputField :label="$t('visit.name')" v-model="name" v-on:inputchanged="$emit('formchanged')"/>
         <TextInputField :label="$t('visit.email')" v-model="email" v-on:inputchanged="checkEmailValid() && $emit('formchanged')"
             :error-text="$t('visit.email_not_valid')"
             v-bind:show-error-text="!emailValid"
@@ -21,8 +20,7 @@
     }
   })
   export default class VisitorForm extends Vue {
-    private firstname: string = "";
-    private lastname: string = "";
+    private name: string = "";
     private phone: string = "";
     private email: string = "";
     private emailValid: boolean = true;
@@ -30,8 +28,7 @@
 
     public getFormData() {
       return {
-        firstname: this.firstname,
-        lastname: this.lastname,
+        name: this.name,
         phone: this.phone,
         email: this.email
       };
