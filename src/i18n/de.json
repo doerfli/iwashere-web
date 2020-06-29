@@ -49,7 +49,8 @@
       "new": "Lokal erfassen"
     },
     "actions": {
-      "new": "Neues Lokal erfassen"
+      "new": "Neues Lokal erfassen",
+      "guest_list": "Gästeliste"
     },
     "name": "Name",
     "shortname": "Kurzbezeichnung",
@@ -77,5 +78,8 @@
     "data_submitted": "Ihre Angaben wurden erfolgreich übermittelt. Im Fall einer Infektion werden wir Sie umgehend benachrichtigen.",
     "data_submitted_retention_policy": "Ihre Daten werden nach 30 Tagen automatisch gelöscht.",
     "data_submission_error": "Bei der Übertragung der Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal."
+  },
+  "guestlist": {
+    "title": "Gästeliste"
   }
 }

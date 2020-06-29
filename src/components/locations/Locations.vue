@@ -4,6 +4,7 @@
             <thead>
             <tr>
                 <th>Name</th>
+                <th class="actions">Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -35,5 +36,7 @@
 </script>
 
 <style scoped>
-
+    .actions {
+        width: 200px;
+    }
 </style>

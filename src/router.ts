@@ -5,6 +5,7 @@ import LocationsView from '@/views/LocationsView.vue';
 import NewLocationView from '@/views/NewLocationView.vue';
 import VisitRegistrationView from '@/views/VisitRegistrationView.vue';
 import SignupView from '@/views/SignupView.vue';
+import LocationsGuestlistView from '@/views/LocationsGuestlistView.vue';
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/locations',
       name: 'Locations',
       component: LocationsView,
+    },
+    {
+      path: '/locations/:shortname/guestlist',
+      name: 'Guestlist',
+      component: LocationsGuestlistView,
     },
     {
       path: '/locations/new',
