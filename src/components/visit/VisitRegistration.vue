@@ -43,7 +43,7 @@
 
   @Component({
     components: {
-      GuestForm: GuestForm
+      GuestForm
     }
   })
   export default class VisitRegistration extends Vue {
