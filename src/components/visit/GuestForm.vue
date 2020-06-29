@@ -19,7 +19,7 @@
       TextInputField
     }
   })
-  export default class VisitorForm extends Vue {
+  export default class GuestForm extends Vue {
     private name: string = "";
     private phone: string = "";
     private email: string = "";
