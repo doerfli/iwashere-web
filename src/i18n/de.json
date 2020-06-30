@@ -64,7 +64,8 @@
   "actions": {
     "save": "Speichern",
     "cancel": "Abbrechen",
-    "register": "Registrieren"
+    "register": "Registrieren",
+    "back": "Zurück"
   },
   "visit": {
     "title": {
@@ -80,6 +81,11 @@
     "data_submission_error": "Bei der Übertragung der Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal."
   },
   "guestlist": {
-    "title": "Gästeliste"
+    "title": "Gästeliste",
+    "guests": "Gäste",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefonnummer",
+    "empty": "Bitte wählen Sie ein Datum"
   }
 }

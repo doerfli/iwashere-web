@@ -17,7 +17,7 @@ const accountModule: Module<any, any> = {
       request.post("/api/login")
         .send(form)
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           if (response.status === 200 ) {
             router.push({name: "Locations"});
           }

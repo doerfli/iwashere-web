@@ -15,7 +15,7 @@ const visitModule: Module<any, any> = {
   actions: {
     async getLocation({ commit }, payload) {
       const resp = await request.get(`/api/locations/byShortname/${payload.shortname}`);
-      console.log(resp);
+      // console.log(resp);
       commit('save', { location: resp.body as LocationEntity });
     },
   },
