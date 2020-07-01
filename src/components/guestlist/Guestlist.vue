@@ -28,7 +28,7 @@
             </a>
           </p>
           <p class="control">
-            <a href="/api/visits/blubb/2020-04-03">
+            <a :href="getGuestListXlsxUrl()">
               <button class="button is-link is-small">
                 <span class="icon is-small">
                   <i class="fas fa-file-excel"></i>
@@ -82,6 +82,10 @@
 
     private getGuestListCsvUrl() {
       return `/api/visits/${this.getShortname()}/${this.getDate()}/csv`;
+    }
+
+    private getGuestListXlsxUrl() {
+      return `/api/visits/${this.getShortname()}/${this.getDate()}/xlsx`;
     }
   }
 </script>
