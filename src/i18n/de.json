@@ -86,6 +86,8 @@
     "name": "Name",
     "email": "E-Mail",
     "phone": "Telefonnummer",
-    "empty": "Bitte wählen Sie ein Datum"
+    "empty": "Bitte wählen Sie ein Datum",
+    "export_csv": "Export to CSV",
+    "export_xls": "Export to Excel"
   }
 }
