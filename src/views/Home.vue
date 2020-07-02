@@ -16,6 +16,9 @@
       <div class="notification is-info" v-if="showSignupSuccess">
         {{$t('home.signup_success')}}
       </div>
+      <div class="notification is-info" v-if="showConfirmSuccess">
+        {{$t('home.confirm_success')}}
+      </div>
       <Login />
     </section>
   </div>
@@ -33,11 +36,15 @@
   })
   export default class Home extends Vue {
     private showSignupSuccess: boolean = false;
+    private showConfirmSuccess: boolean = false;
 
     public mounted() {
       console.log(this.$route.query);
       if (this.$route.query.signup === "true") {
         this.showSignupSuccess = true;
+      }
+      if (this.$route.query.confirm === "true") {
+        this.showConfirmSuccess = true;
       }
     }
   }

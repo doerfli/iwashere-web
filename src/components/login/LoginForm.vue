@@ -16,6 +16,9 @@
     <div class="notification is-danger" v-if="showLoginError">
       {{$t('login.login_error')}}
     </div>
+    <div class="notification is-danger" v-if="showAccountNotConfirmed">
+      {{$t('login.account_not_confirmed')}}
+    </div>
     <Button :title="$t('login.loginbutton')" v-on:click="login" />
 
     <router-link to="/signup">
@@ -40,6 +43,7 @@
     private password: string = "";
     private showFormIncomplete: boolean = false;
     private showLoginError: boolean = false;
+    private showAccountNotConfirmed: boolean = false;
 
     private isValid() {
       return this.username !== "" && this.password !== "";
@@ -48,6 +52,7 @@
     private async login() {
       this.showFormIncomplete = false;
       this.showLoginError = false;
+      this.showAccountNotConfirmed = false;
 
       if (!this.isValid()) {
         this.showFormIncomplete = true;
@@ -63,15 +68,17 @@
       form.append('password', this.password);
       try {
         const response = await superagent.post('/api/login').send(form);
-        // console.log(response);
-        if (response.status === 200) {
-          router.push({name: 'Locations'});
+        console.log(1);
+        console.log(response);
+        await router.push({name: 'Locations'});
+      } catch (e) {
+        // console.log(e.message);
+        console.log(e.response);
+        if (e.response.status === 425) {
+          this.showAccountNotConfirmed = true;
         } else {
           this.showLoginError = true;
         }
-      } catch (e) {
-        // console.log(e);
-        this.showLoginError = true;
       }
     }
   }

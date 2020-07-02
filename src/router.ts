@@ -7,6 +7,7 @@ import VisitRegistrationView from '@/views/VisitRegistrationView.vue';
 import SignupView from '@/views/SignupView.vue';
 import LocationsGuestlistView from '@/views/LocationsGuestlistView.vue';
 import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
+import SignupConfirmView from '@/views/SignupConfirmView.vue';
 
 Vue.use(Router);
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/signup',
       name: 'Signup',
       component: SignupView,
+    },
+    {
+      path: '/signupConfirm/:token',
+      name: 'SignupConfirm',
+      component: SignupConfirmView,
     },
     {
       path: '/locations',

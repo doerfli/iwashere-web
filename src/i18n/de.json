@@ -8,7 +8,8 @@
     "signup": "Neues Konto erstellen"
   },
   "home": {
-    "signup_success": "Ihr neues Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen."
+    "signup_success": "Ihr Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen.",
+    "confirm_success": "Ihr Konto wurde erfolgreicht bestätigt. Sie können sich nun anmelden."
   },
   "login": {
     "username": {
@@ -22,6 +23,7 @@
     "loginbutton": "Anmelden",
     "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
     "login_error": "Der Benutzername oder das Passwort waren falsch. Bitte versuchen Sie es noch einmal.",
+    "account_not_confirmed": "Ihr Konto wurde noch nicht bestätigt. Ein E-Mail mit Informationen wurde an Ihre E-Mail Adresse geschickt.",
     "signup_link": "Neues Konto erstellen"
   },
   "signup": {
@@ -43,6 +45,9 @@
     "password_too_short": "Das Passwort muss mindestens {length} Zeichen lang sein",
     "signup_error": "Während der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es noch einmal.",
     "email_invalid": "Bitte geben Sie eine gültige E-Mail Adresse ein."
+  },
+  "signupConfirm": {
+    "confirming": "Deine Anmeldung wird bestätigt ..."
   },
   "locations": {
     "title": {
