@@ -4,18 +4,32 @@
             {{this.loc.name}}
         </td>
         <td class="is-vcentered">
-            <p class="buttons">
-                <router-link :to="guestListUrl()">
-                    <button class="button is-small is-link">
-                        <span class="icon is-small">
-                          <i class="fas fa-clipboard-list"></i>
-                        </span>
-                        <span>
-                            {{$t('locations.actions.guest_list')}}
-                        </span>
-                    </button>
-                </router-link>
-            </p>
+            <div class="field is-grouped is-pulled-right">
+                <p class="control">
+                    <router-link :to="guestListUrl()">
+                        <button class="button is-small is-link">
+                            <span class="icon is-small">
+                              <i class="fas fa-clipboard-list"></i>
+                            </span>
+                            <span>
+                                {{$t('locations.actions.guest_list')}}
+                            </span>
+                        </button>
+                    </router-link>
+                </p>
+                <p class="control">
+                    <router-link :to="qrcodeUrl()" target='_blank'>
+                        <button class="button is-small is-link">
+                            <span class="icon is-small">
+                              <i class="fas fa-qrcode"></i>
+                            </span>
+                            <span>
+                                {{$t('locations.actions.qr_code')}}
+                            </span>
+                        </button>
+                    </router-link>
+                </p>
+            </div>
         </td>
     </tr>
 </template>
@@ -32,6 +46,10 @@
     private guestListUrl() {
         return `/locations/${this.loc.shortname}/guestlist`;
     }
+
+      private qrcodeUrl() {
+          return `/locations/${this.loc.shortname}/qrcode`;
+      }
   }
 </script>
 

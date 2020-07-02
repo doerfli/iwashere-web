@@ -50,7 +50,8 @@
     },
     "actions": {
       "new": "Neues Lokal erfassen",
-      "guest_list": "Gästeliste"
+      "guest_list": "Gästeliste",
+      "qr_code": "QR Code anzeigen"
     },
     "name": "Name",
     "shortname": "Kurzbezeichnung",

@@ -6,6 +6,7 @@ import NewLocationView from '@/views/NewLocationView.vue';
 import VisitRegistrationView from '@/views/VisitRegistrationView.vue';
 import SignupView from '@/views/SignupView.vue';
 import LocationsGuestlistView from '@/views/LocationsGuestlistView.vue';
+import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
 
 Vue.use(Router);
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/locations',
       name: 'Locations',
       component: LocationsView,
+    },
+    {
+      path: '/locations/:shortname/qrcode',
+      name: 'LocationQRCodeView',
+      component: LocationQrcodeView,
     },
     {
       path: '/locations/:shortname/guestlist',
