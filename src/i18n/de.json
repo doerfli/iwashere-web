@@ -40,6 +40,7 @@
     "submitButton": "Anmelden",
     "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
     "passwords_dontmatch": "Die eingegebenen Passwörter stimmen nicht überein. Bitte versuchen Sie es noch einmal.",
+    "password_too_short": "Das Passwort muss mindestens {length} Zeichen lang sein",
     "signup_error": "Während der Registrierung ist ein Fehler aufgetreten. Bitte versuchen Sie es noch einmal.",
     "email_invalid": "Bitte geben Sie eine gültige E-Mail Adresse ein."
   },
