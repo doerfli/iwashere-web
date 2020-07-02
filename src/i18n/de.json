@@ -83,6 +83,7 @@
   "guestlist": {
     "title": "Gästeliste",
     "guests": "Gäste",
+    "table_title": "Gaeste am {date}",
     "name": "Name",
     "email": "E-Mail",
     "phone": "Telefonnummer",

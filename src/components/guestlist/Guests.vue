@@ -2,7 +2,7 @@
   <table class="table is-striped is-hoverable is-fullwidth">
     <thead>
       <tr>
-        <th colspan="3" v-if="getGuests().length > 0">Gaeste am {{getDate()}}</th>
+        <th colspan="3" v-if="getGuests().length > 0">{{$t('guestlist.table_title', { date: getDate()})}}</th>
       </tr>
       <tr>
         <th>{{$t('guestlist.name')}}</th>

@@ -1,9 +1,9 @@
 <template>
     <tr>
-        <td>
+        <td class="is-vcentered">
             {{this.loc.name}}
         </td>
-        <td>
+        <td class="is-vcentered">
             <p class="buttons">
                 <router-link :to="guestListUrl()">
                     <button class="button is-small is-link">

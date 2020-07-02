@@ -1,5 +1,14 @@
 <template>
-  <div class="spacebelow" v-on:click="selectDate()">
+  <div
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
+    :class="{
+        spacebelow: true,
+        active: hover,
+        'has-text-grey-light': hover,
+        'has-text-info': isSelected()
+    }"
+    v-on:click="selectDate()" >
     <b class="date">{{getDate()}}</b>
     <span class="count has-text-right">
       {{getCount()}}
@@ -15,19 +24,29 @@
   @Component
   export default class Date extends Vue {
     @Prop()
-    private data!: any;
+    private content!: any;
+
+    public data() {
+      return {
+        hover: false,
+      };
+    }
 
     private getDate() {
-      return moment(this.data.date).format("DD.MM.YYYY");
+      return moment(this.content.date).format("DD.MM.YYYY");
     }
 
     private getCount() {
-      return this.data.guestcount;
+      return this.content.guestcount;
     }
 
     private selectDate() {
-      const date = this.data.date;
+      const date = this.content.date;
       this.$store.dispatch("locations/setDate", { date, shortname: this.$store.state.locations.location.shortname });
+    }
+
+    private isSelected() {
+      return this.$store.state.locations.date === this.content.date;
     }
   }
 </script>
@@ -43,5 +62,8 @@
   .count {
     display: inline-block;
     width: 30px;
+  }
+  .active {
+    cursor: pointer;
   }
 </style>

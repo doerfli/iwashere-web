@@ -1,7 +1,7 @@
 <template>
   <div>
     <Date
-      v-for="x in dates()" v-bind:key="x.date" v-bind:data="x" />
+      v-for="x in dates()" v-bind:key="x.date" v-bind:content="x" />
   </div>
 </template>
 
