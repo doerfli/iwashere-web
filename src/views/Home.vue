@@ -39,6 +39,7 @@
     private showConfirmSuccess: boolean = false;
 
     public mounted() {
+      this.$store.dispatch('account/resetUser');
       console.log(this.$route.query);
       if (this.$route.query.signup === "true") {
         this.showSignupSuccess = true;

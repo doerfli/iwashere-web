@@ -8,6 +8,7 @@ import SignupView from '@/views/SignupView.vue';
 import LocationsGuestlistView from '@/views/LocationsGuestlistView.vue';
 import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
 import SignupConfirmView from '@/views/SignupConfirmView.vue';
+import ProfileView from '@/views/ProfileView.vue';
 
 Vue.use(Router);
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/visit/:shortname',
       name: 'RegisterVisit',
       component: VisitRegistrationView
+    },
+    {
+      path: '/profile',
+      name: 'Profile',
+      component: ProfileView
     }
   ],
 });

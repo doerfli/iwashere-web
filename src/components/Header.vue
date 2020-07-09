@@ -15,6 +15,36 @@
                     <span aria-hidden="true"></span>
                 </a>
             </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        &nbsp;
+                    </a>
+                    <router-link to="/locations" class="navbar-item">
+                        {{ $t('locations.title.list') }}
+                    </router-link>
+                </div>
+
+                <div class="navbar-end" v-if="hasUser()">
+                    <div class="navbar-item has-dropdown  is-hoverable">
+                        <span class="navbar-link">
+                            {{ getUsername() }}
+                        </span>
+
+                        <div class="navbar-dropdown">
+                            <router-link to="/profile" class="navbar-item">
+                                {{ $t('header.profile') }}
+                            </router-link>
+                            <a class="navbar-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navbar-item">
+
+                    </div>
+                </div>
+            </div>
         </nav>
     </div>
 </template>
@@ -25,8 +55,26 @@
   @Component
   export default class Header extends Vue {
 
+      public mounted() {
+          if ( ! this.isPublicPage()) {
+              this.$store.dispatch('account/fetchUser');
+          }
+      }
+
+      private isPublicPage() {
+          return ["Home", "Signup"].indexOf(this.$route.name as string) > -1;
+      }
+
       private getBaseUrl() {
           return process.env.VUE_APP_BASEURL;
+      }
+
+      private hasUser() {
+          return this.$store.state.account.user !== null;
+      }
+
+      private getUsername() {
+          return this.$store.state.account.user.username;
       }
   }
 </script>

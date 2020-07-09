@@ -68,8 +68,8 @@
       form.append('password', this.password);
       try {
         const response = await superagent.post('/api/login').send(form);
-        console.log(1);
-        console.log(response);
+        console.log("login successful");
+        await this.$store.dispatch("account/fetchUser");
         await router.push({name: 'Locations'});
       } catch (e) {
         // console.log(e.message);

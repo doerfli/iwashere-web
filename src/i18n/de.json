@@ -5,7 +5,11 @@
     "home": "Willkommen bei Ich war da",
     "home_sub": "Einfaches Contact Tracing in 5 Schritten",
     "login": "Anmeldung",
-    "signup": "Neues Konto erstellen"
+    "signup": "Neues Konto erstellen",
+    "profile": "Einstellungen"
+  },
+  "header": {
+    "profile": "Einstellungen"
   },
   "home": {
     "signup_success": "Ihr Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen.",
