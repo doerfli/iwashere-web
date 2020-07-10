@@ -60,8 +60,8 @@
     private isValid() {
       this.passwordsDontMatch = this.password !== this.passwordConfirmation;
       this.passwordTooShort = this.password.length < this.MINPASSWORDLENGTH;
-      return this.oldPassword !== "" && this.password !== "" && this.passwordConfirmation !== "" && ! this.passwordTooShort
-        && ! this.passwordsDontMatch;
+      return this.oldPassword !== "" && this.password !== "" && this.passwordConfirmation !== ""
+        && ! this.passwordTooShort && ! this.passwordsDontMatch;
     }
 
     private async changePassword() {
