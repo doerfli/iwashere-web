@@ -5,20 +5,7 @@
                         v-model="oldPassword"
                         v-on:enterPressed="changePassword"
     />
-    <PasswordInputField :label="$t('profile.change_password.password')" :hint-text="$t('profile.change_password.password_hint')"
-                        icon-left="key"
-                        v-model="password"
-                        v-on:enterPressed="changePassword"
-                        :error-text="$t('profile.change_password.password_too_short', { length: MINPASSWORDLENGTH })"
-                        v-bind:show-error-text="passwordTooShort"
-    />
-    <PasswordInputField :label="$t('profile.change_password.passwordConfirmation')" :hint-text="$t('profile.change_password.passwordConfirmation_hint')"
-                        icon-left="key"
-                        v-model="passwordConfirmation"
-                        v-on:enterPressed="changePassword"
-                        :error-text="$t('profile.change_password.passwords_dontmatch')"
-                        v-bind:show-error-text="passwordsDontMatch"
-    />
+    <PasswordFormFields ref="passwordFields"/>
     <div class="notification is-warning" v-if="showFormIncomplete">
       {{$t('profile.change_password.form_incomplete')}}
     </div>
@@ -41,27 +28,24 @@
   import PasswordInputField from '@/components/form/PasswordInputField.vue';
   import Button from '@/components/form/Button.vue';
   import {request} from '@/superagent';
+  import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
 
   @Component({
-    components: {Button, PasswordInputField}
+    components: {PasswordFormFields, Button, PasswordInputField}
   })
   export default class ChangePasswordForm extends Vue {
-    private MINPASSWORDLENGTH = Number(process.env.VUE_APP_PASSWORD_MIN_LENGTH);
+    public $refs!: {
+      passwordFields: HTMLFormElement
+    };
+
     private oldPassword: string = "";
-    private password: string = "";
-    private passwordConfirmation: string = "";
-    private passwordsDontMatch: boolean = false;
-    private passwordTooShort: boolean = false;
     private showFormIncomplete: boolean = false;
     private showChangeError: boolean = false;
     private showChangeFailedError: boolean = false;
     private showPasswordChanged: boolean = false;
 
     private isValid() {
-      this.passwordsDontMatch = this.password !== this.passwordConfirmation;
-      this.passwordTooShort = this.password.length < this.MINPASSWORDLENGTH;
-      return this.oldPassword !== "" && this.password !== "" && this.passwordConfirmation !== ""
-        && ! this.passwordTooShort && ! this.passwordsDontMatch;
+      return this.oldPassword !== "" && this.$refs.passwordFields.isValid();
     }
 
     private async changePassword() {
@@ -82,13 +66,12 @@
       try {
         const response = await request.post('/api/accounts/changePassword').send({
           oldPassword: this.oldPassword,
-          newPassword: this.password
+          newPassword: this.$refs.passwordFields.getPassword()
         });
         if (response.status === 200) {
           this.showPasswordChanged = true;
-          this.password = "";
           this.oldPassword = "";
-          this.passwordConfirmation = "";
+          this.$refs.passwordFields.resetFields();
         }
       } catch (e) {
         // console.log(e);

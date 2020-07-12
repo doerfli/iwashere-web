@@ -7,20 +7,7 @@
                     :error-text="$t('signup.email_invalid')"
                     v-bind:show-error-text="emailInvalid"
     />
-    <PasswordInputField :label="$t('signup.password.label')" :hint-text="$t('signup.password.hint')"
-                        icon-left="key"
-                        v-model="password"
-                        v-on:enterPressed="signup"
-                        :error-text="$t('signup.password_too_short', { length: MINPASSWORDLENGTH })"
-                        v-bind:show-error-text="passwordTooShort"
-    />
-    <PasswordInputField :label="$t('signup.passwordConfirmation.label')" :hint-text="$t('signup.passwordConfirmation.hint')"
-                        icon-left="key"
-                        v-model="passwordConfirmation"
-                        v-on:enterPressed="signup"
-                        :error-text="$t('signup.passwords_dontmatch')"
-                        v-bind:show-error-text="passwordsDontMatch"
-    />
+    <PasswordFormFields ref="passwordFields"/>
     <div class="notification is-warning" v-if="showFormIncomplete">
       {{$t('signup.form_incomplete')}}
     </div>
@@ -39,29 +26,27 @@
   import superagent from 'superagent';
   import router from '@/router';
   import { EMAIL_REGEX } from '@/constants';
+  import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
 
   @Component({
     components: {
+      PasswordFormFields,
       TextInputField, PasswordInputField, Button
     }
   })
   export default class SignupForm extends Vue {
-    private MINPASSWORDLENGTH = Number(process.env.VUE_APP_PASSWORD_MIN_LENGTH);
+    public $refs!: {
+      passwordFields: HTMLFormElement
+    };
+
     private username: string = "";
-    private password: string = "";
-    private passwordConfirmation: string = "";
-    private passwordsDontMatch: boolean = false;
-    private passwordTooShort: boolean = false;
     private showFormIncomplete: boolean = false;
     private showSignupError: boolean = false;
     private emailInvalid: boolean = false;
 
     private isValid() {
       this.emailInvalid = ! EMAIL_REGEX.test(this.username);
-      this.passwordsDontMatch = this.password !== this.passwordConfirmation;
-      this.passwordTooShort = this.password.length < this.MINPASSWORDLENGTH;
-      return this.username !== "" && this.password !== "" && this.passwordConfirmation !== "" && ! this.passwordTooShort
-        && ! this.passwordsDontMatch && ! this.emailInvalid;
+      return this.username !== "" && this.$refs.passwordFields.isValid();
     }
 
     private async signup() {
@@ -80,7 +65,7 @@
       try {
         const response = await superagent.post('/api/accounts/signup').send({
           username: this.username,
-          password: this.password
+          password: this.$refs.passwordFields.getPassword()
         });
         if (response.status === 200) {
           await router.push({name: 'Home', query: { signup: 'true' }});

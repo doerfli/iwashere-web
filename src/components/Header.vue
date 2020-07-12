@@ -62,7 +62,7 @@
       }
 
       private isPublicPage() {
-          return ["Home", "Signup", "ResetPassword"].indexOf(this.$route.name as string) > -1;
+          return ["Home", "Signup", "SignupConfirm", "ResetPassword"].indexOf(this.$route.name as string) > -1;
       }
 
       private getBaseUrl() {
