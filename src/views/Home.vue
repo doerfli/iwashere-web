@@ -19,6 +19,9 @@
       <div class="notification is-info" v-if="showConfirmSuccess">
         {{$t('home.confirm_success')}}
       </div>
+      <div class="notification is-info" v-if="showPasswortResetSuccess">
+        {{$t('home.password_reset_success')}}
+      </div>
       <Login />
     </section>
   </div>
@@ -37,6 +40,7 @@
   export default class Home extends Vue {
     private showSignupSuccess: boolean = false;
     private showConfirmSuccess: boolean = false;
+    private showPasswortResetSuccess: boolean = false;
 
     public mounted() {
       this.$store.dispatch('account/resetUser');
@@ -46,6 +50,9 @@
       }
       if (this.$route.query.confirm === "true") {
         this.showConfirmSuccess = true;
+      }
+      if (this.$route.query.resetPassword === "true") {
+        this.showPasswortResetSuccess = true;
       }
     }
   }

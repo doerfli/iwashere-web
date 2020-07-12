@@ -6,14 +6,16 @@
     "home_sub": "Einfaches Contact Tracing in 5 Schritten",
     "login": "Anmeldung",
     "signup": "Neues Konto erstellen",
-    "profile": "Einstellungen"
+    "profile": "Einstellungen",
+    "reset_password": "Passwort zurücksetzen"
   },
   "header": {
     "profile": "Einstellungen"
   },
   "home": {
     "signup_success": "Ihr Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen.",
-    "confirm_success": "Ihr Konto wurde erfolgreicht bestätigt. Sie können sich nun anmelden."
+    "confirm_success": "Ihr Konto wurde erfolgreicht bestätigt. Sie können sich nun anmelden.",
+    "password_reset_success": "Ihr neues Passwort wurde erfolgreich gesetzt. Sie können sich nun anmelden."
   },
   "login": {
     "username": {
@@ -28,7 +30,17 @@
     "form_incomplete": "Bitte füllen Sie Benutzername und Passwort aus und melden Sie sich anschliessend nochmals an.",
     "login_error": "Der Benutzername oder das Passwort waren falsch. Bitte versuchen Sie es noch einmal.",
     "account_not_confirmed": "Ihr Konto wurde noch nicht bestätigt. Ein E-Mail mit Informationen wurde an Ihre E-Mail Adresse geschickt.",
-    "signup_link": "Neues Konto erstellen"
+    "signup_link": "Neues Konto erstellen",
+    "forgotten_password": {
+      "link": "Passwort vergessen",
+      "username_empty": "Bitte Benutzername eingeben",
+      "reset_sent": "Sie erhalten in Kürze ein E-Mail mit Instruktionen zum Zurücksetzen des Passworts.",
+      "error": "Beim Zurücksetzen des Passworts ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es später noch einmal."
+    }
+  },
+  "reset_password": {
+    "submit": "Passwort speichern",
+    "error": "Beim Zurücksetzen des Passworts ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es später noch einmal."
   },
   "signup": {
     "username": {

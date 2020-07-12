@@ -9,6 +9,7 @@ import LocationsGuestlistView from '@/views/LocationsGuestlistView.vue';
 import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
 import SignupConfirmView from '@/views/SignupConfirmView.vue';
 import ProfileView from '@/views/ProfileView.vue';
+import ResetPasswordView from '@/views/ResetPasswordView.vue';
 
 Vue.use(Router);
 
@@ -58,6 +59,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: ProfileView
+    },
+    {
+      path: '/resetPassword/:token',
+      name: 'ResetPassword',
+      component: ResetPasswordView
     }
   ],
 });

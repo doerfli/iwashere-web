@@ -21,9 +21,25 @@
     </div>
     <Button :title="$t('login.loginbutton')" v-on:click="login" />
 
-    <router-link to="/signup">
-      {{$t('login.signup_link')}}
-    </router-link>
+    <div class="links">
+      <router-link to="/signup">
+        {{$t('login.signup_link')}}
+      </router-link>
+      |
+      <a v-on:click="passwordForgotten()">
+        {{$t('login.forgotten_password.link')}}
+      </a>
+    </div>
+
+    <div class="notification is-danger" v-if="showUsernameEmptyError">
+      {{$t('login.forgotten_password.username_empty')}}
+    </div>
+    <div class="notification is-success" v-if="showPasswordResetSent">
+      {{$t('login.forgotten_password.reset_sent')}}
+    </div>
+    <div class="notification is-danger" v-if="showPasswordResetError">
+      {{$t('login.forgotten_password.error')}}
+    </div>
   </div>
 </template>
 
@@ -34,6 +50,7 @@
   import Button from '@/components/form/Button.vue';
   import router from '@/router';
   import superagent from 'superagent';
+  import {request} from '@/superagent';
 
   @Component({
     components: {Button, PasswordInputField, TextInputField}
@@ -44,6 +61,9 @@
     private showFormIncomplete: boolean = false;
     private showLoginError: boolean = false;
     private showAccountNotConfirmed: boolean = false;
+    private showUsernameEmptyError: boolean = false;
+    private showPasswordResetSent: boolean = false;
+    private showPasswordResetError: boolean = false;
 
     private isValid() {
       return this.username !== "" && this.password !== "";
@@ -81,9 +101,33 @@
         }
       }
     }
+
+    private async passwordForgotten() {
+      this.showUsernameEmptyError = false;
+      this.showPasswordResetSent = false;
+      this.showPasswordResetError = false;
+
+      if (this.username === "") {
+        this.showUsernameEmptyError = true;
+        return;
+      }
+
+      try {
+        await request.post('/api/accounts/forgotPassword').send({
+          username: this.username
+        });
+        console.log("password reset successful");
+        this.showPasswordResetSent = true;
+      } catch (e) {
+        console.log(e.response);
+        this.showPasswordResetError = true;
+      }
+    }
   }
 </script>
 
 <style scoped>
-
+  .links {
+    padding-bottom: 1em;
+  }
 </style>
