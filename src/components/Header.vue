@@ -20,7 +20,7 @@
                     <a class="navbar-item">
                         &nbsp;
                     </a>
-                    <router-link to="/locations" class="navbar-item">
+                    <router-link to="/locations" class="navbar-item"  v-if="hasUser()">
                         {{ $t('locations.title.list') }}
                     </router-link>
                 </div>

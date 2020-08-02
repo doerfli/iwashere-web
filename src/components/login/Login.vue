@@ -1,10 +1,9 @@
 <template>
   <div>
-    <div class="columns">
-      <div class="column is-half">
-        <LoginForm/>
-      </div>
-    </div>
+      <h1 class="title">
+        Anmeldung
+      </h1>
+      <LoginForm/>
   </div>
 </template>
 
