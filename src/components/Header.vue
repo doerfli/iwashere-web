@@ -3,10 +3,13 @@
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
                 <a class="navbar-item" :href="getBaseUrl()">
-                    <span class="icon has-text-primary">
-                        <i class="fas fa-2x fa-file-contract is-primary"></i>
-                    </span>
-                    <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}</h1>
+                  <span class="icon has-text-primary icon-space">
+                      <i class="fas fa-2x fa-clipboard-list is-primary"></i>
+                  </span>
+                  <span class="icon has-text-primary">
+                        <i class="fas fa-2x fa-user-check is-primary"></i>
+                  </span>
+                  <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}</h1>
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -85,5 +88,8 @@
     }
     .container {
         margin-bottom: 24px;
+    }
+    .icon-space {
+      margin-right: 12px;
     }
 </style>

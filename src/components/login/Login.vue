@@ -1,7 +1,7 @@
 <template>
   <div>
       <h1 class="title">
-        Anmeldung
+        {{ $t('title.login')}}
       </h1>
       <LoginForm/>
   </div>

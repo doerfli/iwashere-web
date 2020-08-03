@@ -3,11 +3,11 @@
     <section class="hero">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
-            {{ $t("title.home")}}
+          <h1 class="title has-text-primary">
+            Schluss mit der Zettelwirtschaft
           </h1>
           <h2 class="subtitle">
-            {{ $t("title.home_sub")}}
+            Ab sofort führen Sie Ihre Gästeliste online!
           </h2>
         </div>
       </div>
@@ -22,36 +22,23 @@
       <div class="notification is-info" v-if="showPasswortResetSuccess">
         {{$t('home.password_reset_success')}}
       </div>
+      <h1 class="title">
+        Was ist <IchWarDaTitle/>?
+      </h1>
       <div class="columns">
-        <div class="column has-text-centered firstcol">
-          <h1 class="title">
-            In drei einfachen Schritten einsatzbereit
-          </h1>
-          <h2 class="subtitle listel">
-            1.
-          </h2>
-          <div>
-            Account erstellen
+        <div class="column">
+          <div class="content is-medium">
+            Mit <IchWarDaTitle/> verwalten Sie ab sofort Ihre
+            <span class="has-text-weight-semibold has-text-primary">Gästeliste online</span>.
+            Nachdem Sie Ihr Lokal aufgeschaltet haben können Ihre Kunden den
+            <span class="has-text-weight-semibold has-text-primary">Besuch</span>
+            in Ihrem Lokal <span class="has-text-weight-semibold has-text-primary">selbstständig registrieren</span>.
+            Dafür brauchen sie nur ein Smartphone mit einem Web-Browser mit Internetzugriff.
           </div>
-          <h2 class="subtitle listel">
-            2.
-          </h2>
-          <div>
-            Lokal mit Namen und Adresse erfassen
-          </div>
-          <h2 class="subtitle listel">
-            3.
-          </h2>
-          <div>
-            QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen koennen) aufhaengen.
-          </div>
-          <div class="listel">
-            <p>
-            Ab sofort koennen deine Gaeste ihren Aufenthalt im Lokal selbst via Smartphone registrieren.
-            </p>
-            <p>
-              <small>Technische Voraussetzung: Smartphone mit Browser und Internetzugriff.</small>
-            </p>
+          <div class="content is-medium">
+            Natürlichen können Sie die Gästeliste jederzeit online einsehen und bei Bedarf exportieren.
+            Die Daten werden auf unserem Server (Serverstandort in der EU) gespeichert und
+            <span class="has-text-weight-semibold has-text-primary">nach 21 Tagen automatisch gelöscht</span>.
           </div>
         </div>
         <div class="column">
@@ -59,13 +46,66 @@
         </div>
       </div>
     </section>
-    <section class="container">
-      <h1 class="title">
-        Was kann Ich war hier?
+    <section class="container spacetop">
+      <h1 class="title has-text-centered">
+        <span class="has-text-weight-semibold has-text-primary">3 Schritte</span> und Ihre Gäste können <IchWarDaTitle /> benutzen
       </h1>
-      <h1 class="title">
-        Haeufige Fragen
-      </h1>
+      <div class="columns">
+        <div class="column has-text-centered">
+          <p>
+            <span class="icon has-text-info">
+              <i class="fas fa-2x fa-dice-one"></i>
+            </span>
+          </p>
+          <p class="content is-medium">
+            <i class="fas fa-user-edit"></i>
+            <router-link to="/signup">
+              Konto erstellen
+            </router-link>
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p>
+            <span class="icon has-text-info">
+              <i class="fas fa-2x fa-dice-two"></i>
+            </span>
+          </p>
+          <p class="content is-medium">
+            <i class="fas fa-home"></i>
+            Lokal mit Namen und Adresse erfassen
+          </p>
+        </div>
+        <div class="column has-text-centered">
+          <p>
+            <span class="icon has-text-info">
+              <i class="fas fa-2x fa-dice-three"></i>
+            </span>
+          </p>
+          <p class="content is-medium">
+            <i class="fas fa-qrcode"></i>
+            QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen koennen) aufhaengen.
+          </p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          &nbsp;
+        </div>
+        <div class="column has-text-centered">
+          <p>
+            <span class="icon has-text-info">
+              <i class="fas fa-2x fa-dice-d6 fa-spin"></i>
+            </span>
+          </p>
+          <p>
+            <i class="fas fa-mobile-alt"></i>
+            Nun können sich Ihre Kunden durch Scannen des QR Codes selbstständig registrieren.
+          </p>
+        </div>
+        <div class="column">
+          &nbsp;
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -74,9 +114,11 @@
   import {Vue} from "vue-property-decorator";
   import Component from 'vue-class-component';
   import Login from '@/components/login/Login.vue';
+  import IchWarDaTitle from '@/components/IchWarDaTitle.vue';
 
   @Component({
       components: {
+        IchWarDaTitle,
           Login
       }
   })
@@ -107,16 +149,15 @@
 <style scoped lang="scss">
   @import './../../node_modules/bulma/sass/utilities/_all';
 
-  .listel {
-    margin-top: 1.5em !important;
-    margin-bottom: 0.2em;
+  .spacetop {
+    margin-top: 4em;
   }
 
-  .firstcol {
-    background-color: $primary;
-
-  }
   .column {
     padding: 2em;
+  }
+
+  .column p .icon {
+    margin-bottom: 1.5em;
   }
 </style>
