@@ -1,5 +1,5 @@
 <template>
-  <span><i class="has-text-primary">Ich war da</i></span>
+  <span><span class="has-text-primary">Ich war da</span></span>
 </template>
 
 <script lang="ts">
