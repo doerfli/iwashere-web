@@ -52,7 +52,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-      '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    'nuxt-i18n',
   ],
   /*
   ** Build configuration
@@ -69,5 +70,20 @@ export default {
   },
   styleResources: {
     scss: ['~assets/scss/main.scss']
-  }
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'de',
+        file: 'de.js'
+      },
+      {
+        code: 'en',
+        file: 'en.js'
+      },
+    ],
+    defaultLocale: 'de',
+    lazy: true,
+    langDir: 'lang/'
+  },
 }

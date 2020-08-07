@@ -15,6 +15,7 @@
     "@nuxtjs/bulma": "^1.3.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "nuxt": "^2.14.0",
+    "nuxt-i18n": "^6.13.7",
     "vue-class-component": "^7.2.5",
     "vue-property-decorator": "^9.0.0"
   },
