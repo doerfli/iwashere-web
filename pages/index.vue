@@ -136,5 +136,15 @@ export default class Index extends Vue {
 }</script>
 
 <style>
+  .spacetop {
+    margin-top: 4em;
+  }
 
+  .column {
+    padding: 2em;
+  }
+
+  .column p .icon {
+    margin-bottom: 1.5em;
+  }
 </style>
