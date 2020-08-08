@@ -49,7 +49,7 @@
   import PasswordInputField from '@/components/form/PasswordInputField.vue';
   import Button from '@/components/form/Button.vue';
   // import router from '@/router';
-  // import superagent from 'superagent';
+  import superagent from 'superagent';
   // import {request} from '@/superagent';
 
   @Component({
@@ -79,50 +79,51 @@
         return;
       }
 
-      // await this.submitLoginData();
+      await this.submitLoginData();
     }
 
-    // private async submitLoginData() {
-    //   const form = new FormData();
-    //   form.append('username', this.username);
-    //   form.append('password', this.password);
-    //   try {
-    //     const response = await superagent.post('/api/login').send(form);
-    //     console.log("login successful");
+    private async submitLoginData() {
+      const form = new FormData();
+      form.append('username', this.username);
+      form.append('password', this.password);
+      try {
+        await superagent.post('/api/login').send(form);
+        // console.log(response);
+        console.log("login successful");
     //     await this.$store.dispatch("account/fetchUser");
-    //     await router.push({name: 'Locations'});
-    //   } catch (e) {
-    //     // console.log(e.message);
-    //     console.log(e.response);
-    //     if (e.response.status === 425) {
-    //       this.showAccountNotConfirmed = true;
-    //     } else {
-    //       this.showLoginError = true;
-    //     }
-    //   }
-    // }
+        await this.$router.push({name: 'Locations'});
+      } catch (e) {
+        // console.log(e.message);
+        console.log(e.response);
+        if (e.response.status === 425) {
+          this.showAccountNotConfirmed = true;
+        } else {
+          this.showLoginError = true;
+        }
+      }
+    }
 
-    // private async passwordForgotten() {
-    //   this.showUsernameEmptyError = false;
-    //   this.showPasswordResetSent = false;
-    //   this.showPasswordResetError = false;
-    //
-    //   if (this.username === "") {
-    //     this.showUsernameEmptyError = true;
-    //     return;
-    //   }
-    //
-    //   try {
-    //     await request.post('/api/accounts/forgotPassword').send({
-    //       username: this.username
-    //     });
-    //     console.log("password reset successful");
-    //     this.showPasswordResetSent = true;
-    //   } catch (e) {
-    //     console.log(e.response);
-    //     this.showPasswordResetError = true;
-    //   }
-    // }
+    private async passwordForgotten() {
+      this.showUsernameEmptyError = false;
+      this.showPasswordResetSent = false;
+      this.showPasswordResetError = false;
+
+      if (this.username === "") {
+        this.showUsernameEmptyError = true;
+        return;
+      }
+
+      try {
+        await superagent.post('/api/accounts/forgotPassword').send({
+          username: this.username
+        });
+        console.log("password reset successful");
+        this.showPasswordResetSent = true;
+      } catch (e) {
+        console.log(e.response);
+        this.showPasswordResetError = true;
+      }
+    }
   }
 </script>
 

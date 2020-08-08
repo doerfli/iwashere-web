@@ -55,6 +55,7 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-i18n',
     'nuxt-fontawesome',
+    '@nuxtjs/proxy',
   ],
   /*
   ** Build configuration
@@ -98,5 +99,10 @@ export default {
       //   icons: ['fab']
       // }
     ]
+  },
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8080',
+    }
   }
 }
