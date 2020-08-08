@@ -4,10 +4,10 @@
             <div class="navbar-brand">
                 <a class="navbar-item" :href="getBaseUrl()">
                   <span class="icon has-text-primary icon-space">
-                      <i class="fas fa-2x fa-clipboard-list is-primary"></i>
+                    <Fas i="clipboard-list" cls="fa-2x" />
                   </span>
                   <span class="icon has-text-primary">
-                      <i class="fas fa-2x fa-user-check is-primary"></i>
+                    <Fas i="user-check" cls="fa-2x" />
                   </span>
                   <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}</h1>
                 </a>
@@ -54,19 +54,16 @@
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import { fas } from '@fortawesome/free-solid-svg-icons'
-
-  @Component
+  import Fas from "~/components/icons/Fas.vue";
+  @Component({
+    components: {Fas}
+  })
   export default class Header extends Vue {
 
       public mounted() {
           if ( ! this.isPublicPage()) {
               // TODO this.$store.dispatch('account/fetchUser');
           }
-      }
-
-      private fas() {
-        return fas;
       }
 
       private isPublicPage() {
