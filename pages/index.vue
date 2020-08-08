@@ -54,11 +54,11 @@
         <div class="column has-text-centered">
           <p>
             <span class="icon has-text-info">
-              <i class="fas fa-2x fa-dice-one"></i>
+              <Fas i="dice-one" cls="fa-2x" />
             </span>
           </p>
           <p class="content is-medium">
-            <i class="fas fa-user-edit"></i>
+            <Fas i="user-edit" />
             <nuxt-link to="/signup">
               Konto erstellen
             </nuxt-link>
@@ -67,22 +67,22 @@
         <div class="column has-text-centered">
           <p>
             <span class="icon has-text-info">
-              <i class="fas fa-2x fa-dice-two"></i>
+              <Fas i="dice-two" cls="fa-2x" />
             </span>
           </p>
           <p class="content is-medium">
-            <i class="fas fa-home"></i>
+            <Fas i="home" />
             Lokal mit Namen und Adresse erfassen
           </p>
         </div>
         <div class="column has-text-centered">
           <p>
             <span class="icon has-text-info">
-              <i class="fas fa-2x fa-dice-three"></i>
+              <Fas i="dice-three" cls="fa-2x" />
             </span>
           </p>
           <p class="content is-medium">
-            <i class="fas fa-qrcode"></i>
+            <Fas i="qrcode" />
             QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen koennen) aufhaengen.
           </p>
         </div>
@@ -94,11 +94,11 @@
         <div class="column has-text-centered">
           <p>
             <span class="icon has-text-info">
-              <i class="fas fa-2x fa-dice-d6 fa-spin"></i>
+              <Fas i="dice-d6" cls="fa-2x fa-spin" />
             </span>
           </p>
           <p>
-            <i class="fas fa-mobile-alt"></i>
+            <Fas i="mobile-alt" />
             Nun können sich Ihre Kunden durch Scannen des QR Codes selbstständig registrieren.
           </p>
         </div>
@@ -114,10 +114,12 @@
 import Vue from 'vue'
 import {Component} from "vue-property-decorator";
 import IchWarDaTitle from "~/components/IchWarDaTitle.vue";
+import Fas from "~/components/icons/Fas.vue";
 
 @Component({
   components: {
-    IchWarDaTitle
+    IchWarDaTitle,
+    Fas
   }
 })
 export default class Index extends Vue {
