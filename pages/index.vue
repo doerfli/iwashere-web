@@ -115,11 +115,13 @@ import Vue from 'vue'
 import {Component} from "vue-property-decorator";
 import IchWarDaTitle from "~/components/IchWarDaTitle.vue";
 import Fas from "~/components/icons/Fas.vue";
+import Login from "~/components/login/Login.vue";
 
 @Component({
   components: {
     IchWarDaTitle,
-    Fas
+    Fas,
+    Login,
   }
 })
 export default class Index extends Vue {
