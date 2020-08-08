@@ -113,8 +113,13 @@
 <script lang="ts">
 import Vue from 'vue'
 import {Component} from "vue-property-decorator";
+import IchWarDaTitle from "~/components/IchWarDaTitle.vue";
 
-@Component
+@Component({
+  components: {
+    IchWarDaTitle
+  }
+})
 export default class Index extends Vue {
   private showSignupSuccess: boolean = false;
   private showConfirmSuccess: boolean = false;

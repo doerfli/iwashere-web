@@ -55,6 +55,7 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import Fas from "~/components/icons/Fas.vue";
+
   @Component({
     components: {Fas}
   })
