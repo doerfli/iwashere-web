@@ -111,18 +111,18 @@
 </template>
 
 <script lang="ts">
-  import {Vue} from "vue-property-decorator";
-  import Component from 'vue-class-component';
-  import Login from '@/components/login/Login.vue';
-  import IchWarDaTitle from '@/components/IchWarDaTitle.vue';
+import {Vue} from 'vue-property-decorator';
+import Component from 'vue-class-component';
+import Login from '@/components/login/Login.vue';
+import IchWarDaTitle from '@/components/IchWarDaTitle.vue';
 
-  @Component({
+@Component({
       components: {
         IchWarDaTitle,
           Login
       }
   })
-  export default class Home extends Vue {
+  export default class HomeView extends Vue {
     private showSignupSuccess: boolean = false;
     private showConfirmSuccess: boolean = false;
     private showPasswortResetSuccess: boolean = false;

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 import LocationsView from '@/views/LocationsView.vue';
 import NewLocationView from '@/views/NewLocationView.vue';
 import VisitRegistrationView from '@/views/VisitRegistrationView.vue';
@@ -10,6 +9,7 @@ import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
 import SignupConfirmView from '@/views/SignupConfirmView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import ResetPasswordView from '@/views/ResetPasswordView.vue';
+import HomeView from '@/views/HomeView.vue';
 
 Vue.use(Router);
 
@@ -18,12 +18,12 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Home,
+      component: HomeView,
     },
     {
       path: '/home',
       name: 'Home',
-      component: Home,
+      component: HomeView,
     },
     {
       path: '/signup',
