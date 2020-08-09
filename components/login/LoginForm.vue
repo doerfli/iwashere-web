@@ -44,15 +44,18 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import TextInputField from '@/components/form/TextInputField.vue';
-  import PasswordInputField from '@/components/form/PasswordInputField.vue';
-  import Button from '@/components/form/Button.vue';
-  // import router from '@/router';
-  import superagent from 'superagent';
-  // import {request} from '@/superagent';
+import {Component, Vue} from 'vue-property-decorator';
+import TextInputField from '@/components/form/TextInputField.vue';
+import PasswordInputField from '@/components/form/PasswordInputField.vue';
+import Button from '@/components/form/Button.vue';
+// import router from '@/router';
+import superagent from 'superagent';
+// import {request} from '@/superagent';
+import Account from '~/store/account.ts';
+// import {accountStore} from "~/utils/store-accessor";
+import {getModule} from 'vuex-module-decorators'
 
-  @Component({
+@Component({
     components: {Button, PasswordInputField, TextInputField}
   })
   export default class LoginForm extends Vue {
@@ -64,6 +67,8 @@
     private showUsernameEmptyError: boolean = false;
     private showPasswordResetSent: boolean = false;
     private showPasswordResetError: boolean = false;
+
+    private accountStore = getModule(Account, this.$store)
 
     private isValid() {
       return this.username !== "" && this.password !== "";
@@ -90,10 +95,10 @@
         await superagent.post('/api/login').send(form);
         // console.log(response);
         console.log("login successful");
-    //     await this.$store.dispatch("account/fetchUser");
-        await this.$router.push({name: 'Locations'});
+        await this.accountStore.fetchUser()
+        // await this.$router.push({name: 'Locations'});
       } catch (e) {
-        // console.log(e.message);
+        console.log(e.message);
         console.log(e.response);
         if (e.response.status === 425) {
           this.showAccountNotConfirmed = true;
