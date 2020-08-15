@@ -16,7 +16,8 @@
           </span>
         </div>
         <div class="column">
-          {{$t('visit.data_submitted')}}
+          {{$t('visit.data_submitted')}} <br />
+          {{$t('visit.data_submitted_retention_policy')}}
         </div>
       </div>
     </div>
@@ -32,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="notification is-info">
+    <div class="notification is-info" v-if="!dataSubmitted">
       {{$t('visit.data_submitted_retention_policy')}}
     </div>
   </div>
