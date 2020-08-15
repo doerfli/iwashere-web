@@ -81,7 +81,7 @@ import {request} from '@/superagent';
     }
 
     private resetForm() {
-      this.$refs.form.reset()
+      this.$refs.form.reset();
       this.dataSubmitted = false;
       this.errorDuringSubmission = false;
     }
