@@ -6,12 +6,17 @@
       {{$t('visit.data_submitted_retention_policy')}}
     </div>
     <GuestForm ref="form"/>
-    <div class="field is-grouped">
+    <div class="field is-grouped" v-if="!this.dataSubmitted">
       <div class="control">
         <button class="button is-primary" v-on:click="saveVisit()" v-bind:disabled="!formValid()">{{$t("actions.register")}}</button>
       </div>
       <div class="control">
         <button class="button is-light" v-on:click="resetForm()">{{$t("visit.reset_form")}}</button>
+      </div>
+    </div>
+    <div class="field is-grouped" v-else>
+      <div class="control">
+        <button class="button is-primary" v-on:click="resetForm()">{{$t("visit.register_next")}}</button>
       </div>
     </div>
     <div class="notification is-success" v-if="dataSubmitted">
@@ -77,6 +82,8 @@ import {request} from '@/superagent';
 
     private resetForm() {
       this.$refs.form.reset()
+      this.dataSubmitted = false;
+      this.errorDuringSubmission = false;
     }
 
     private async saveVisit() {
