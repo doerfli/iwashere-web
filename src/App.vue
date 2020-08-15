@@ -6,10 +6,10 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Header from './components/Header.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import Header from './components/Header.vue';
 
-  @Component({
+@Component({
     components: {
       Header
     },
@@ -18,6 +18,7 @@
 </script>
 
 <style lang="scss">
+  @import "./assets/main.scss";
   @import './../node_modules/bulma/bulma.sass';
   @import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
 
