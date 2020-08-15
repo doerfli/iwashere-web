@@ -100,7 +100,7 @@
     "email": "E-Mail",
     "email_not_valid": "Diese E-Mail Adresse ist ungültig",
     "data_submitted": "Ihre Angaben wurden erfolgreich übermittelt. Im Fall einer Infektion werden wir Sie umgehend benachrichtigen.",
-    "data_submitted_retention_policy": "Ihre Daten werden nach 30 Tagen automatisch gelöscht.",
+    "data_submitted_retention_policy": "Alle erfassten Daten werden nach 14 Tagen automatisch gelöscht.",
     "data_submission_error": "Bei der Übertragung der Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal."
   },
   "guestlist": {

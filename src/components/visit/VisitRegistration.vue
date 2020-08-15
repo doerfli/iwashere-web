@@ -16,8 +16,7 @@
           </span>
         </div>
         <div class="column">
-          {{$t('visit.data_submitted')}}<br/>
-          {{$t('visit.data_submitted_retention_policy')}}
+          {{$t('visit.data_submitted')}}
         </div>
       </div>
     </div>
@@ -33,15 +32,18 @@
         </div>
       </div>
     </div>
+    <div class="notification is-info">
+      {{$t('visit.data_submitted_retention_policy')}}
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import GuestForm from '@/components/visit/GuestForm.vue';
-  import {request} from '@/superagent';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import GuestForm from '@/components/visit/GuestForm.vue';
+import {request} from '@/superagent';
 
-  @Component({
+@Component({
     components: {
       GuestForm
     }
