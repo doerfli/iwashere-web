@@ -2,6 +2,9 @@
   <div>
     <h1 class="title">{{$t("visit.title.welcome", {name: this.$store.state.visit.location.name })}}</h1>
     <h2 class="subtitle">{{$t("visit.title.registration")}}</h2>
+    <div class="notification is-info" v-if="!dataSubmitted">
+      {{$t('visit.data_submitted_retention_policy')}}
+    </div>
     <GuestForm ref="form"/>
     <div class="field is-grouped">
       <div class="control">
@@ -35,9 +38,6 @@
           {{$t('visit.data_submission_error')}}
         </div>
       </div>
-    </div>
-    <div class="notification is-info" v-if="!dataSubmitted">
-      {{$t('visit.data_submitted_retention_policy')}}
     </div>
   </div>
 </template>
