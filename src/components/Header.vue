@@ -53,9 +53,9 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
-  @Component
+@Component
   export default class Header extends Vue {
 
       public mounted() {
@@ -65,7 +65,7 @@
       }
 
       private isPublicPage() {
-          return ["Home", "Signup", "SignupConfirm", "ResetPassword"].indexOf(this.$route.name as string) > -1;
+          return ["Home", "Signup", "SignupConfirm", "ResetPassword", "RegisterVisit"].indexOf(this.$route.name as string) > -1;
       }
 
       private getBaseUrl() {
