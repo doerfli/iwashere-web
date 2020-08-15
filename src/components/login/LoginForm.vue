@@ -19,7 +19,9 @@
     <div class="notification is-danger" v-if="showAccountNotConfirmed">
       {{$t('login.account_not_confirmed')}}
     </div>
-    <Button :title="$t('login.loginbutton')" v-on:click="login" />
+    <div class="field">
+      <Button :title="$t('login.loginbutton')" v-on:click="login" />
+    </div>
 
     <div class="links">
       <router-link to="/signup">
@@ -44,15 +46,15 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import TextInputField from '@/components/form/TextInputField.vue';
-  import PasswordInputField from '@/components/form/PasswordInputField.vue';
-  import Button from '@/components/form/Button.vue';
-  import router from '@/router';
-  import superagent from 'superagent';
-  import {request} from '@/superagent';
+import {Component, Vue} from 'vue-property-decorator';
+import TextInputField from '@/components/form/TextInputField.vue';
+import PasswordInputField from '@/components/form/PasswordInputField.vue';
+import Button from '@/components/form/Button.vue';
+import router from '@/router';
+import superagent from 'superagent';
+import {request} from '@/superagent';
 
-  @Component({
+@Component({
     components: {Button, PasswordInputField, TextInputField}
   })
   export default class LoginForm extends Vue {

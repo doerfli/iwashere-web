@@ -14,21 +14,26 @@
     <div class="notification is-danger" v-if="showSignupError">
       {{$t('signup.signup_error')}}
     </div>
-    <Button :title="$t('signup.submitButton')" v-on:click="signup" />
+    <div class="field is-grouped">
+      <Button :title="$t('signup.submitButton')" v-on:click="signup" />
+      <router-link to="/" class="button is-light">
+        {{ $t('actions.back') }}
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Button from '@/components/form/Button.vue';
-  import PasswordInputField from '@/components/form/PasswordInputField.vue';
-  import TextInputField from '@/components/form/TextInputField.vue';
-  import superagent from 'superagent';
-  import router from '@/router';
-  import { EMAIL_REGEX } from '@/constants';
-  import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import Button from '@/components/form/Button.vue';
+import PasswordInputField from '@/components/form/PasswordInputField.vue';
+import TextInputField from '@/components/form/TextInputField.vue';
+import superagent from 'superagent';
+import router from '@/router';
+import {EMAIL_REGEX} from '@/constants';
+import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
 
-  @Component({
+@Component({
     components: {
       PasswordFormFields,
       TextInputField, PasswordInputField, Button

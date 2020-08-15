@@ -1,17 +1,15 @@
 <template>
-  <div class="field">
-    <p class="control">
-      <button class="button is-primary" v-on:click="$emit('click')" >
-        {{ getTitle() }}
-      </button>
-    </p>
-  </div>
+  <p class="control">
+    <button class="button is-primary" v-on:click="$emit('click')" >
+      {{ getTitle() }}
+    </button>
+  </p>
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 
-  @Component
+@Component
   export default class Button extends Vue {
     @Prop()
     private title!: string;

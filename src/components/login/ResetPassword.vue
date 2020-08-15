@@ -1,7 +1,9 @@
 <template>
   <div>
     <PasswordFormFields ref="passwordFields"/>
-    <Button :title="$t('reset_password.submit')" v-on:click="resetPassword" />
+    <div class="field">
+      <Button :title="$t('reset_password.submit')" v-on:click="resetPassword" />
+    </div>
 
     <div class="notification is-danger" v-if="showPasswordResetError">
       {{$t('reset_password.error')}}
@@ -10,13 +12,13 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
-  import Button from '@/components/form/Button.vue';
-  import {request} from '@/superagent';
-  import router from '@/router';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
+import Button from '@/components/form/Button.vue';
+import {request} from '@/superagent';
+import router from '@/router';
 
-  @Component({
+@Component({
     components: {Button, PasswordFormFields}
   })
   export default class ResetPassword extends Vue {

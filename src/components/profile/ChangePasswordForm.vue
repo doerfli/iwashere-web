@@ -15,7 +15,9 @@
     <div class="notification is-danger" v-if="showChangeFailedError">
       {{$t('profile.change_password.password_change_failed')}}
     </div>
-    <Button :title="$t('profile.change_password.submitButton')" v-on:click="changePassword" />
+    <div class="field">
+      <Button :title="$t('profile.change_password.submitButton')" v-on:click="changePassword" />
+    </div>
     <div class="notification is-success" v-if="showPasswordChanged">
       {{$t('profile.change_password.password_changed')}}
     </div>
@@ -23,14 +25,13 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import router from '@/router';
-  import PasswordInputField from '@/components/form/PasswordInputField.vue';
-  import Button from '@/components/form/Button.vue';
-  import {request} from '@/superagent';
-  import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import PasswordInputField from '@/components/form/PasswordInputField.vue';
+import Button from '@/components/form/Button.vue';
+import {request} from '@/superagent';
+import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
 
-  @Component({
+@Component({
     components: {PasswordFormFields, Button, PasswordInputField}
   })
   export default class ChangePasswordForm extends Vue {
