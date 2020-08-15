@@ -1,5 +1,5 @@
 <template>
-  <section class="locations">
+  <section class="section">
     <div class="container">
       <VisitRegistration :shortname="locationShortname()" />
     </div>
@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import VisitRegistration from '@/components/visit/VisitRegistration.vue';
-  // import 'vue-router/types/vue';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import VisitRegistration from '@/components/visit/VisitRegistration.vue';
+// import 'vue-router/types/vue';
 
   @Component({
     components: {

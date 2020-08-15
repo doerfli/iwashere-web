@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <fragment>
     <section class="hero">
       <div class="hero-body">
         <div class="container">
@@ -12,16 +12,19 @@
         </div>
       </div>
     </section>
-    <section class="container">
-      <Signup />
+    <section class="section">
+      <div class="container">
+        <Signup />
+      </div>
     </section>
-  </div>
+  </fragment>
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Signup from '@/components/login/Signup.vue';
-  @Component({
+import {Component, Vue} from 'vue-property-decorator';
+import Signup from '@/components/login/Signup.vue';
+
+@Component({
     components: {Signup}
   })
   export default class SignupView extends Vue {

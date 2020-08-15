@@ -1,5 +1,5 @@
 <template>
-    <section class="locations">
+    <section class="section locations">
         <div class="container">
             <h1 class="title">{{$t("locations.title.list")}}</h1>
             <Locations />
@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Locations from '@/components/locations/Locations.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import Locations from '@/components/locations/Locations.vue';
 
-  @Component({
+@Component({
     components: {
       Locations
     },
