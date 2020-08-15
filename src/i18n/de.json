@@ -101,7 +101,9 @@
     "email_not_valid": "Diese E-Mail Adresse ist ungültig",
     "data_submitted": "Danke dass Sie Ihre Kontaktdaten bei uns hinterlegt haben.",
     "data_submitted_retention_policy": "Alle erfassten Daten werden nach 14 Tagen automatisch gelöscht.",
-    "data_submission_error": "Bei der Übertragung der Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal."
+    "data_submission_error": "Bei der Übertragung der Daten ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es noch einmal.",
+    "reset_form": "Formular löschen",
+    "register_next": "Weiteren Besucher registrieren"
   },
   "guestlist": {
     "title": "Gästeliste",

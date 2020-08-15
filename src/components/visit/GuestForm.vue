@@ -10,11 +10,11 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import TextInputField from '@/components/form/TextInputField.vue';
-  import { EMAIL_REGEX } from '@/constants';
+import {Component, Vue} from 'vue-property-decorator';
+import TextInputField from '@/components/form/TextInputField.vue';
+import {EMAIL_REGEX} from '@/constants';
 
-  @Component({
+@Component({
     components: {
       TextInputField
     }
@@ -41,6 +41,13 @@
 
     private checkEmailValid() {
         this.emailValid = EMAIL_REGEX.test(this.email);
+    }
+
+    public reset() {
+      this.name = "";
+      this.phone = "";
+      this.email = "";
+      this.emailValid = true;
     }
 
   }

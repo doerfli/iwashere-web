@@ -7,6 +7,9 @@
       <div class="control">
         <button class="button is-primary" v-on:click="saveVisit()" v-bind:disabled="!formValid()">{{$t("actions.register")}}</button>
       </div>
+      <div class="control">
+        <button class="button is-light" v-on:click="resetForm()">{{$t("visit.reset_form")}}</button>
+      </div>
     </div>
     <div class="notification is-success" v-if="dataSubmitted">
       <div class="columns">
@@ -70,6 +73,10 @@ import {request} from '@/superagent';
         return false;
       }
       return this.$refs.form.isValid() && ! this.dataSubmitted;
+    }
+
+    private resetForm() {
+      this.$refs.form.reset()
     }
 
     private async saveVisit() {
