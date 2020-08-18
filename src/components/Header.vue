@@ -66,7 +66,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
       private isPublicPage() {
           return [
-              "Home", "Signup", "SignupConfirm", "ResetPassword", "RegisterVisit"
+              "Home", "Signup", "SignupConfirm", "ResetPassword", "RegisterVisit", "ConfirmVisitEmail"
           ].indexOf(this.$route.name as string) > -1;
       }
 

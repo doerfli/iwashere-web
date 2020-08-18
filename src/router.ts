@@ -10,6 +10,7 @@ import SignupConfirmView from '@/views/SignupConfirmView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import ResetPasswordView from '@/views/ResetPasswordView.vue';
 import HomeView from '@/views/HomeView.vue';
+import VisitConfirmEmailView from '@/views/VisitConfirmEmailView.vue';
 
 Vue.use(Router);
 
@@ -59,6 +60,11 @@ export default new Router({
       path: '/visit/:shortname',
       name: 'RegisterVisit',
       component: VisitRegistrationView
+    },
+    {
+      path: '/visit/:id/confirm',
+      name: 'ConfirmVisitEmail',
+      component: VisitConfirmEmailView
     },
     {
       path: '/profile',

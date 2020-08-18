@@ -14,7 +14,7 @@
   },
   "home": {
     "signup_success": "Ihr Konto wurde erstellt. Sie erhalten in Kürze ein Email mit wichtigen Informationen.",
-    "confirm_success": "Ihr Konto wurde erfolgreicht bestätigt. Sie können sich nun anmelden.",
+    "confirm_success": "Ihr Konto wurde erfolgreich bestätigt. Sie können sich nun anmelden.",
     "password_reset_success": "Ihr neues Passwort wurde erfolgreich gesetzt. Sie können sich nun anmelden."
   },
   "login": {
@@ -108,7 +108,7 @@
   "guestlist": {
     "title": "Gästeliste",
     "guests": "Gäste",
-    "table_title": "Gaeste am {date}",
+    "table_title": "Gäste am {date}",
     "name": "Name",
     "email": "E-Mail",
     "phone": "Telefonnummer",
@@ -133,5 +133,10 @@
       "submitButton": "Neues Passwort speichern",
       "password_changed": "Ihr Passwort wurde geändert"
     }
+  },
+  "visitConfirm": {
+    "confirming": "Ihre Email Adresse wird bestätigt. Bitte haben Sie einen Moment Geduld.",
+    "confirmedTitle": "Bestätigung erfolgreich",
+    "confirmedText": "Danke, dass Sie Ihre Email Adresse bestätigt haben. Sie können diese Seite nun schliessen."
   }
 }

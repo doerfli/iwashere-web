@@ -9,9 +9,8 @@
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import VisitRegistration from '@/components/visit/VisitRegistration.vue';
-// import 'vue-router/types/vue';
 
-  @Component({
+@Component({
     components: {
       VisitRegistration,
     }
