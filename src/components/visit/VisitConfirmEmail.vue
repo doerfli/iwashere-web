@@ -48,7 +48,6 @@ import superagent from 'superagent';
       } finally {
         this.confirming = false;
       }
-
     }
   }
 </script>

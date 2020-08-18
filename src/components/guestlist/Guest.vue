@@ -10,6 +10,14 @@
           <i class="fas fa-envelope"></i>
         </span>
         {{getGuest().guest_email}}
+        <span class="content" v-if="!emailVerified()">
+          <small>
+            &nbsp;
+            <a v-on:click="confirmEmail()">
+              {{ $t('guestlist.verify') }}
+            </a>
+          </small>
+        </span>
       </fragment>
     </td>
     <td>
@@ -19,6 +27,13 @@
           <i class="fas fa-phone"></i>
         </span>
         {{getGuest().guest_phone}}
+        <span class="content" v-if="!phoneVerified()">
+          <small>
+            <a v-on:click="confirmPhone()">
+              {{ $t('guestlist.verify') }}
+            </a>
+          </small>
+        </span>
       </fragment>
     </td>
   </tr>
@@ -29,6 +44,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import VisitEntity from '@/model/visitentity';
 // @ts-ignore
 import {Fragment} from 'vue-fragment';
+import superagent from 'superagent';
 
 @Component({
     components: {
@@ -37,26 +53,26 @@ import {Fragment} from 'vue-fragment';
   })
   export default class Guest extends Vue {
     @Prop()
-    private guest!: VisitEntity;
+    private visit!: VisitEntity;
 
     private getGuest() {
-      return this.guest;
+      return this.visit;
     }
 
     private hasEmail(): boolean {
-      return this.guest.guest_email !== "";
+      return this.visit.guest_email !== "";
     }
 
     private hasPhone(): boolean {
-      return this.guest.guest_phone !== "";
+      return this.visit.guest_phone !== "";
     }
 
     private emailVerified(): boolean {
-      return this.guest.verifiedEmail;
+      return this.visit.verifiedEmail;
     }
 
     private phoneVerified(): boolean {
-      return this.guest.verifiedPhone;
+      return this.visit.verifiedPhone;
     }
 
     private phoneVerifiedText() {
@@ -74,6 +90,28 @@ import {Fragment} from 'vue-fragment';
         return this.$t('guestlist.not_verified');
       }
     }
+
+    private async confirmEmail() {
+      try {
+        const response = await superagent.put(`/api/visits/${this.visit.id}/verify/email`).send();
+        if (response.status === 200) {
+          await this.$store.dispatch("locations/confirmEmail", { id: this.visit.id });
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    }
+
+  private async confirmPhone() {
+    try {
+      const response = await superagent.put(`/api/visits/${this.visit.id}/verify/phone`).send();
+      if (response.status === 200) {
+        await this.$store.dispatch("locations/confirmPhone", { id: this.visit.id });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
   }
 </script>
 

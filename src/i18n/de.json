@@ -116,7 +116,8 @@
     "phone": "Telefonnummer",
     "empty": "Bitte wählen Sie ein Datum",
     "export_csv": "Export als CSV Datei",
-    "export_xls": "Export als Excel Datei"
+    "export_xls": "Export als Excel Datei",
+    "verify": "Bestätigen"
   },
   "profile": {
     "change_password": {

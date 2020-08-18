@@ -46,17 +46,18 @@
         <Datelist />
       </div>
       <div class="column">
-        <Guests v-bind:guests="this.$store.state.locations.visits" v-bind:date="getDate()"/>
+        <Guests v-bind:visits="this.$store.state.locations.visits" v-bind:date="getDate()"/>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import Datelist from '@/components/guestlist/Datelist.vue';
-  import Guests from '@/components/guestlist/Guests.vue';
-  @Component({
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import Datelist from '@/components/guestlist/Datelist.vue';
+import Guests from '@/components/guestlist/Guests.vue';
+
+@Component({
     components: {Guests, Datelist}
   })
   export default class Guestlist extends Vue {

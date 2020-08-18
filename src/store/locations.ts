@@ -1,7 +1,7 @@
 import {Module} from 'vuex';
 import {request} from '@/superagent';
-import LocationEntity from "@/model/locationentity";
-import VisitEntity from "@/model/visitentity";
+import LocationEntity from '@/model/locationentity';
+import VisitEntity from '@/model/visitentity';
 
 const locationsModule: Module<any, any> = {
   namespaced: true as true,
@@ -29,6 +29,14 @@ const locationsModule: Module<any, any> = {
     },
     setVisits(state, payload) {
       state.visits = payload.visits as VisitEntity[];
+    },
+    confirmEmail(state, payload) {
+      const id = payload.id;
+      state.visits.filter((v: VisitEntity) => v.id === id).forEach((v: VisitEntity) => v.verifiedEmail = true);
+    },
+    confirmPhone(state, payload) {
+      const id = payload.id;
+      state.visits.filter((v: VisitEntity) => v.id === id).forEach((v: VisitEntity) => v.verifiedPhone = true);
     }
   },
   actions: {
@@ -58,6 +66,12 @@ const locationsModule: Module<any, any> = {
       const resp = await request.get(`/api/visits/${payload.shortname}/${this.state.locations.date}`);
       // console.log(resp);
       commit('setVisits', { visits: resp.body.visits });
+    },
+    confirmEmail({commit}, payload) {
+      commit('confirmEmail', { id: payload.id});
+    },
+    confirmPhone({commit}, payload) {
+      commit('confirmPhone', { id: payload.id});
     }
   },
   getters: {
