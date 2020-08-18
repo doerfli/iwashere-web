@@ -25,8 +25,14 @@
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import VisitEntity from '@/model/visitentity';
+// @ts-ignore
+import {Fragment} from 'vue-fragment';
 
-@Component
+@Component({
+    components: {
+      Fragment
+    }
+  })
   export default class Guest extends Vue {
     @Prop()
     private guest!: VisitEntity;
@@ -36,11 +42,11 @@ import VisitEntity from '@/model/visitentity';
     }
 
     private hasEmail(): boolean {
-      return this.guest.guest_email != "";
+      return this.guest.guest_email !== "";
     }
 
     private hasPhone(): boolean {
-      return this.guest.guest_phone != "";
+      return this.guest.guest_phone !== "";
     }
 
     private emailVerified(): boolean {
