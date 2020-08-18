@@ -4,6 +4,8 @@ interface VisitEntity {
   guest_email: string | null;
   guest_phone: string | null;
   visitTimestamp: string;
+  verifiedEmail: boolean;
+  verifiedPhone: boolean;
 }
 
 export default VisitEntity;
