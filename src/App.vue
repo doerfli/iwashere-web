@@ -21,6 +21,7 @@ import Header from './components/Header.vue';
   @import "./assets/main.scss";
   @import './../node_modules/bulma/bulma.sass';
   @import './../node_modules/@fortawesome/fontawesome-free/css/all.css';
+  @import './../node_modules/@creativebulma/bulma-tooltip/dist/bulma-tooltip.css';
 
   #app {
   }

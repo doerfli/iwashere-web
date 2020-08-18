@@ -5,7 +5,8 @@
     </td>
     <td>
       <fragment v-if="hasEmail()">
-        <span :class="{ icon: true, 'has-text-success': emailVerified(), 'has-text-danger': !emailVerified()}">
+        <span :class="{ icon: true, 'has-text-success': emailVerified(), 'has-text-danger': !emailVerified(), 'has-tooltip-left': true}"
+              :data-tooltip="emailVerifiedText()">
           <i class="fas fa-envelope"></i>
         </span>
         {{getGuest().guest_email}}
@@ -13,7 +14,8 @@
     </td>
     <td>
       <fragment v-if="hasPhone()">
-        <span :class="{ icon: true, 'has-text-success': phoneVerified(), 'has-text-danger': !phoneVerified()}">
+        <span :class="{ icon: true, 'has-text-success': phoneVerified(), 'has-text-danger': !phoneVerified(), 'has-tooltip-left': true}"
+              :data-tooltip="phoneVerifiedText()">
           <i class="fas fa-phone"></i>
         </span>
         {{getGuest().guest_phone}}
@@ -55,6 +57,22 @@ import {Fragment} from 'vue-fragment';
 
     private phoneVerified(): boolean {
       return this.guest.verifiedPhone;
+    }
+
+    private phoneVerifiedText() {
+      return this.verifiedText(this.phoneVerified());
+    }
+
+    private emailVerifiedText() {
+      return this.verifiedText(this.emailVerified());
+    }
+
+    private verifiedText(status: boolean) {
+      if (status) {
+        return this.$t('guestlist.verified');
+      } else {
+        return this.$t('guestlist.not_verified');
+      }
     }
   }
 </script>

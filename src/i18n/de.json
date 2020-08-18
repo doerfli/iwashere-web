@@ -111,6 +111,8 @@
     "table_title": "Gäste am {date}",
     "name": "Name",
     "email": "E-Mail",
+    "verified": "Bestätigt",
+    "not_verified": "Nicht bestätigt",
     "phone": "Telefonnummer",
     "empty": "Bitte wählen Sie ein Datum",
     "export_csv": "Export als CSV Datei",
