@@ -17,9 +17,6 @@
         <div class="notification is-info" v-if="showSignupSuccess">
           {{$t('home.signup_success')}}
         </div>
-        <div class="notification is-info" v-if="showConfirmSuccess">
-          {{$t('home.confirm_success')}}
-        </div>
         <div class="notification is-info" v-if="showPasswortResetSuccess">
           {{$t('home.password_reset_success')}}
         </div>
