@@ -75,7 +75,7 @@ export default class Location extends Vue {
 
     const refs = this.$refs;
     toDataURL(this.getVisitUrl(), opts, (err, url) => {
-      console.log(url);
+      // console.log(url);
       refs.qrcodelink.href = url;
     });
   }
