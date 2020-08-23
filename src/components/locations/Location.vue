@@ -1,56 +1,56 @@
 <template>
-    <tr>
-        <td class="is-vcentered">
-            {{this.loc.name}}
-        </td>
-        <td class="is-vcentered">
-            <div class="field is-grouped is-pulled-right">
-                <p class="control">
-                    <router-link :to="guestListUrl()">
-                        <button class="button is-small is-link">
-                            <span class="icon is-small">
-                              <i class="fas fa-clipboard-list"></i>
-                            </span>
-                            <span>
-                                {{$t('locations.actions.guest_list')}}
-                            </span>
-                        </button>
-                    </router-link>
-                </p>
-                <p class="control">
-                    <router-link :to="qrcodeUrl()" target='_blank'>
-                        <button class="button is-small is-link">
-                            <span class="icon is-small">
-                              <i class="fas fa-qrcode"></i>
-                            </span>
-                            <span>
-                                {{$t('locations.actions.qr_code')}}
-                            </span>
-                        </button>
-                    </router-link>
-                </p>
-            </div>
-        </td>
-    </tr>
+  <tr>
+    <td class="is-vcentered">
+      {{ this.loc.name }}
+    </td>
+    <td class="is-vcentered">
+      <div class="field is-grouped is-pulled-right">
+        <p class="control">
+          <router-link :to="guestListUrl()">
+            <button class="button is-small is-link">
+              <span class="icon is-small">
+                <i class="fas fa-clipboard-list"></i>
+              </span>
+              <span>
+                {{ $t('locations.actions.guest_list') }}
+              </span>
+            </button>
+          </router-link>
+        </p>
+        <p class="control">
+          <router-link :to="qrcodeUrl()" target='_blank'>
+            <button class="button is-small is-link">
+              <span class="icon is-small">
+                <i class="fas fa-qrcode"></i>
+              </span>
+              <span>
+                {{ $t('locations.actions.qr_code') }}
+              </span>
+            </button>
+          </router-link>
+        </p>
+      </div>
+    </td>
+  </tr>
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import LocationEntity from '@/model/locationentity';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import LocationEntity from '@/model/locationentity';
 
-  @Component
-  export default class Location extends Vue {
-    @Prop()
-    private loc!: LocationEntity;
+@Component
+export default class Location extends Vue {
+  @Prop()
+  private loc!: LocationEntity;
 
-    private guestListUrl() {
-        return `/locations/${this.loc.shortname}/guestlist`;
-    }
-
-      private qrcodeUrl() {
-          return `/locations/${this.loc.shortname}/qrcode`;
-      }
+  private guestListUrl() {
+    return `/locations/${this.loc.shortname}/guestlist`;
   }
+
+  private qrcodeUrl() {
+    return `/locations/${this.loc.shortname}/qrcode`;
+  }
+}
 </script>
 
 <style scoped>
