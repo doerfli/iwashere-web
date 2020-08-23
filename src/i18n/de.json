@@ -79,7 +79,8 @@
     "actions": {
       "new": "Neues Lokal erfassen",
       "guest_list": "Gästeliste",
-      "qr_code": "QR Code anzeigen"
+      "qr_code": "QR Code anzeigen",
+      "qr_code_download": "QR Code herunterladen"
     },
     "name": "Name",
     "shortname": "Kurzbezeichnung",

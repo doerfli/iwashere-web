@@ -5,10 +5,10 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import { toCanvas } from 'qrcode';
+import {Component, Prop, Vue} from 'vue-property-decorator';
+import {QRCodeToDataURLOptions, toCanvas} from 'qrcode';
 
-  @Component
+@Component
   export default class QRCodeImg extends Vue {
     public $refs!: {
       canvas: HTMLFormElement
@@ -18,7 +18,10 @@
     private url!: string;
 
     public mounted() {
-      toCanvas(this.$refs.canvas, `url:${this.url}`, (error) => {
+      const opts = {
+        scale: 10
+      } as QRCodeToDataURLOptions;
+      toCanvas(this.$refs.canvas, `url:${this.url}`, opts, (error) => {
         if (error) { console.error(error); }
         console.log('success!');
       });
