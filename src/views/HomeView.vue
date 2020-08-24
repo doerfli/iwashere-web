@@ -20,11 +20,29 @@
         <div class="notification is-info" v-if="showPasswortResetSuccess">
           {{$t('home.password_reset_success')}}
         </div>
-        <h1 class="title">
+        <h1 class="title is-1">
           Was ist <IchWarDaTitle/>?
         </h1>
         <div class="columns">
           <div class="column">
+            <h3 class="title is-3">
+              Für Besucher
+            </h3>
+            <div class="content is-medium">
+              Auf <IchWarDaTitle /> können Sie Ihre Kontaktdaten bei einem Besuch im Restaurant, in der Bar oder
+              auch in einem Club ganz einfach hinterlegen. Sie müssen nur den ausgehängten QR Code scannen, Ihre
+              Kontaktdaten eingeben und abschicken. Schon sind Sie registriert.
+            </div>
+            <div class="content is-medium">
+              Nach 14 Tagen werden Ihre Daten automatisch gelöscht.
+              Sollte es im besuchten Lokal zu einem COVID-19 Fall kommen kann der Wirt die betroffenen Kontaktdaten
+              ganz einfach an die Contact Tracer weitergeben.
+            </div>
+          </div>
+          <div class="column">
+            <h3 class="title is-3">
+              Für Besitzer
+            </h3>
             <div class="content is-medium">
               Mit <IchWarDaTitle/> verwalten Sie ab sofort Ihre
               <span class="has-text-weight-semibold has-text-primary">Gästeliste online</span>.
@@ -38,6 +56,12 @@
               Die Daten werden auf unserem Server (Serverstandort in der EU) gespeichert und
               <span class="has-text-weight-semibold has-text-primary">nach 14 Tagen automatisch gelöscht</span>.
             </div>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+
           </div>
           <div class="column">
             <Login />
