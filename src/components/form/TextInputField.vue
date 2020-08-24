@@ -2,7 +2,7 @@
   <div class="field">
     <label class="label">{{this.getLabel()}}</label>
     <div v-bind:class="{ control: true, 'has-icons-left': hasIconLeft() }">
-      <input class="input"
+      <input :class="{input: true, 'is-danger': isShowErrorText()}"
              :type="getType()"
              v-bind:value="value"
              :placeholder="getHintText()"
@@ -11,8 +11,8 @@
              v-on:keypress="submitOnEnter($event)"
       />
       <span class="icon is-small is-left" v-if="hasIconLeft()">
-              <i :class="getIconLeftClasses()"></i>
-            </span>
+        <i :class="getIconLeftClasses()"></i>
+      </span>
     </div>
     <p class="help is-danger" v-if="isShowErrorText()">{{getErrorText()}}</p>
     <p class="help is-info" v-if="hasInfoText()">{{getInfoText()}}</p>
