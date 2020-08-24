@@ -9,7 +9,10 @@
                   <span class="icon has-text-primary">
                         <i class="fas fa-2x fa-user-check is-primary"></i>
                   </span>
-                  <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}</h1>
+                  <h1 class="title is-2 has-text-primary">{{ $t("title.application") }}
+                    <span class="tag is-danger is-light is-medium has-tooltip-right"
+                          :data-tooltip="$t('title.beta')">&beta;eta</span>
+                  </h1>
                 </a>
 
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">

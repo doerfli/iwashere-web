@@ -7,7 +7,8 @@
     "login": "Anmeldung für registrierte Benutzer",
     "signup": "Neues Konto erstellen",
     "profile": "Einstellungen",
-    "reset_password": "Passwort zurücksetzen"
+    "reset_password": "Passwort zurücksetzen",
+    "beta": "Wir sind noch in der Entwicklung. Unsere Services werden von Woche zu Woche besser!"
   },
   "header": {
     "profile": "Einstellungen"
