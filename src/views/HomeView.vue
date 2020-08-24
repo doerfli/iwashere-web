@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero">
+    <section class="hero  is-hidden-mobile ">
       <div class="hero-body">
         <div class="container">
           <h1 class="title has-text-primary">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section ">
       <div class="container">
         <div class="notification is-info" v-if="showSignupSuccess">
           {{$t('home.signup_success')}}
@@ -59,22 +59,7 @@
           </div>
         </div>
 
-        <div class="columns">
-          <div class="column">
-
-          </div>
-          <div class="column">
-            <Login />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section spacetop">
-      <div class="container">
-        <h1 class="title has-text-centered">
-          <span class="has-text-weight-semibold has-text-primary">3 Schritte</span> und Ihre Gäste können <IchWarDaTitle /> benutzen
-        </h1>
-        <div class="columns">
+        <div class="columns spacetop">
           <div class="column has-text-centered">
             <p>
               <span class="icon has-text-info">
@@ -87,8 +72,7 @@
                 Konto erstellen
               </router-link>
             </p>
-          </div>
-          <div class="column has-text-centered">
+
             <p>
               <span class="icon has-text-info">
                 <i class="fas fa-2x fa-dice-two"></i>
@@ -98,8 +82,7 @@
               <i class="fas fa-home"></i>
               Lokal mit Namen und Adresse erfassen
             </p>
-          </div>
-          <div class="column has-text-centered">
+
             <p>
               <span class="icon has-text-info">
                 <i class="fas fa-2x fa-dice-three"></i>
@@ -109,13 +92,7 @@
               <i class="fas fa-qrcode"></i>
               QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen koennen) aufhaengen.
             </p>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column">
-            &nbsp;
-          </div>
-          <div class="column has-text-centered">
+
             <p>
               <span class="icon has-text-info">
                 <i class="fas fa-2x fa-dice-d6 fa-spin"></i>
@@ -127,7 +104,7 @@
             </p>
           </div>
           <div class="column">
-            &nbsp;
+            <Login />
           </div>
         </div>
       </div>
