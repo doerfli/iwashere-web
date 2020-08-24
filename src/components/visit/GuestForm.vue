@@ -1,18 +1,21 @@
 <template>
   <div>
     <TextInputField :label="$t('visit.name')" v-model="name"
+                    icon-left="user-edit"
                     v-on:inputchanged="checkNameValid() && $emit('formchanged')"
                     :error-text="$t('visit.name_not_valid')"
                     v-bind:show-error-text="!nameValid"
     />
     <TextInputField :label="$t('visit.email')" v-model="email"
                     type="email"
+                    icon-left="envelope"
                     v-on:inputchanged="checkEmailValid() && $emit('formchanged')"
                     :error-text="$t('visit.email_not_valid')"
                     v-bind:show-error-text="!emailValid"
     />
     <TextInputField :label="$t('visit.phone')" v-model="phone"
                     type="tel"
+                    icon-left="phone"
                     v-on:inputchanged="checkPhoneValid() && $emit('formchanged')"
                     :error-text="$t('visit.phone_not_valid')"
                     v-bind:show-error-text="!phoneValid"
