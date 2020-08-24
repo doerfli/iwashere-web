@@ -31,10 +31,10 @@
             <div class="content is-medium">
               Auf <IchWarDaTitle /> können Sie Ihre Kontaktdaten bei einem Besuch im Restaurant, in der Bar oder
               auch in einem Club ganz einfach hinterlegen. Sie müssen nur den ausgehängten QR Code scannen, Ihre
-              Kontaktdaten eingeben und abschicken. Schon sind Sie registriert.
+              Kontaktdaten eingeben und abschicken. Schon sind Ihre Daten erfasst.
             </div>
             <div class="content is-medium">
-              Nach 14 Tagen werden Ihre Daten automatisch gelöscht.
+              Sie müssen dafür kein Konto bei uns anlegen und nach 14 Tagen werden Ihre Daten automatisch gelöscht.
               Sollte es im besuchten Lokal zu einem COVID-19 Fall kommen kann der Wirt die betroffenen Kontaktdaten
               ganz einfach an die Contact Tracer weitergeben.
             </div>
