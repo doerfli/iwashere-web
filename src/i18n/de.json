@@ -105,7 +105,9 @@
       "registration": "Registrierung ihres Besuchs"
     },
     "name": "Name",
+    "name_not_valid": "Name muss eingeben werden",
     "phone": "Telefonnummer",
+    "phone_not_valid": "Telefonnummer muss eingeben werden",
     "email": "E-Mail",
     "email_not_valid": "Diese E-Mail Adresse ist ungültig",
     "data_submitted": "Danke dass Sie Ihre Kontaktdaten bei uns hinterlegt haben.",
