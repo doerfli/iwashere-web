@@ -27,19 +27,14 @@ export default new Router({
       component: HomeView,
     },
     {
-      path: '/signup',
-      name: 'Signup',
-      component: SignupView,
-    },
-    {
-      path: '/signupConfirm/:token',
-      name: 'SignupConfirm',
-      component: SignupConfirmView,
-    },
-    {
       path: '/locations',
       name: 'Locations',
       component: LocationsView,
+    },
+    {
+      path: '/locations/new',
+      name: 'NewLocation',
+      component: NewLocationView,
     },
     {
       path: '/locations/:shortname/qrcode',
@@ -52,9 +47,24 @@ export default new Router({
       component: LocationsGuestlistView,
     },
     {
-      path: '/locations/new',
-      name: 'NewLocation',
-      component: NewLocationView,
+      path: '/profile',
+      name: 'Profile',
+      component: ProfileView
+    },
+    {
+      path: '/resetPassword/:token',
+      name: 'ResetPassword',
+      component: ResetPasswordView
+    },
+    {
+      path: '/signup',
+      name: 'Signup',
+      component: SignupView,
+    },
+    {
+      path: '/signupConfirm/:token',
+      name: 'SignupConfirm',
+      component: SignupConfirmView,
     },
     {
       path: '/visit/:shortname',
@@ -66,15 +76,5 @@ export default new Router({
       name: 'ConfirmVisitEmail',
       component: VisitConfirmEmailView
     },
-    {
-      path: '/profile',
-      name: 'Profile',
-      component: ProfileView
-    },
-    {
-      path: '/resetPassword/:token',
-      name: 'ResetPassword',
-      component: ResetPasswordView
-    }
   ],
 });
