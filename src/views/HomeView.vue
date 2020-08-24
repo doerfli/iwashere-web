@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-    <section class="section ">
+    <section class="section">
       <div class="container">
         <div class="notification is-info" v-if="showSignupSuccess">
           {{$t('home.signup_success')}}

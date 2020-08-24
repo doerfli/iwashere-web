@@ -11,6 +11,7 @@ import ProfileView from '@/views/ProfileView.vue';
 import ResetPasswordView from '@/views/ResetPasswordView.vue';
 import HomeView from '@/views/HomeView.vue';
 import VisitConfirmEmailView from '@/views/VisitConfirmEmailView.vue';
+import FaqView from '@/views/FaqView.vue';
 
 Vue.use(Router);
 
@@ -20,6 +21,11 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: HomeView,
+    },
+    {
+      path: '/faq',
+      name: 'Faq',
+      component: FaqView,
     },
     {
       path: '/home',
