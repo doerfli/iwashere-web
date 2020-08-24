@@ -2,7 +2,8 @@
   <div class="field">
     <label class="label">{{this.getLabel()}}</label>
     <div v-bind:class="{ control: true, 'has-icons-left': hasIconLeft() }">
-      <input class="input" type="text"
+      <input class="input"
+             :type="getType()"
              v-bind:value="value"
              :placeholder="getHintText()"
              v-on:input="$emit('input', $event.target.value)"
@@ -19,12 +20,18 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import InputFieldBase from '@/components/form/InputFieldBase.vue';
+import {Component, Prop} from 'vue-property-decorator';
+import InputFieldBase from '@/components/form/InputFieldBase.vue';
 
-  @Component
+@Component
   export default class TextInputField extends InputFieldBase {
 
+    @Prop({default: "text"})
+    private type!: string;
+
+    private getType() {
+      return this.type;
+    }
   }
 </script>
 
