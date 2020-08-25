@@ -8,15 +8,16 @@
 
           <Question question="Was ist Ich-war-da?"
                     answer="Auf Ich-war-da können Sie Ihre Kontaktdaten bei einem Besuch im Restaurant hinterlegen.
-                            Im Falle einer COVID-19 Infektion während Ihrem Besuch hat der Wirt so die Möglichkeit" />
+                            Im Falle einer COVID-19 Infektion während Ihrem Besuch hat der Betreiber so die Möglichkeit
+                            rasch eine Gästeliste zu exportieren und an die Contact Tracer weiter zu geben." />
 
           <Question question="Für wen ist Ich-war-da gedacht?"
                     answer="Die Seite ist für alle Betriebe gemacht die eine einfache Gästeliste führen wollen und keine
                             eigene Infrastruktur und/oder Software dafür besitzen." />
 
-          <Question question="Muss ich für jedes Lokal einen eigenen Account anlegen?"
-                    answer="Sie können mit einem Account mehrere Lokale erfassen. Jedes Lokal erhält einen eigenen
-                            QR Code resp. eine eigene URL unter der die Gäste ihre Daten hinterlegen können." />
+          <Question question="Muss ich für jedes Betrieb einen eigenen Account anlegen?"
+                    answer="Sie können mit einem Account mehrere Betriebe erfassen. Jeder Betrieb erhält einen eigenen
+                            QR Code resp. eine eigene URL unter der die Gäste ihren Besuch registrieren können." />
 
           <Question question="Muss der Kunde das Formular bei jedem Besuch aufs neue ausfüllen?"
                     answer="Im Moment ja, in Zukunft möchten wir es ermöglichen die Daten zu hinterlegen und damit eine
@@ -51,7 +52,7 @@
                     answer="Die Daten der registrierten Kunden werden nach 14 Tagen automatisch gelöscht." />
 
           <Question question="Wer kann auf die gespeicherten Daten zugreifen?"
-                    answer="Aktuell kann nur der Benutzer der das Lokal erfasst hat die Daten einsehen.
+                    answer="Aktuell kann nur der Benutzer der das Betrieb erfasst hat die Daten einsehen.
                             in naher Zukunft werden wir die Möglichkeit bieten, dass mehrere Benutzer (zb ihre Angestellten)
                             mit einem eigenen Konto Zugriff auf die Gästeliste haben. Dann müssen Sie die Konten nicht teilen." />
         </div>

@@ -35,8 +35,8 @@
             </div>
             <div class="content is-medium">
               Sie müssen dafür kein Konto bei uns anlegen und nach 14 Tagen werden Ihre Daten automatisch gelöscht.
-              Sollte es im besuchten Lokal zu einem COVID-19 Fall kommen kann der Wirt die betroffenen Kontaktdaten
-              ganz einfach an die Contact Tracer weitergeben.
+              Sollte es im besuchten Betrieb zu einem COVID-19 Fall kommen, dann kann der Betreiber die Kontaktdaten der betroffnen
+              Gäste exportieren und an die Contact Tracer weitergeben.
             </div>
           </div>
           <div class="column">
@@ -46,9 +46,9 @@
             <div class="content is-medium">
               Mit <IchWarDaTitle/> verwalten Sie ab sofort Ihre
               <span class="has-text-weight-semibold has-text-primary">Gästeliste online</span>.
-              Nachdem Sie Ihr Lokal aufgeschaltet haben können Ihre Kunden den
+              Nachdem Sie Ihr Betrieb aufgeschaltet haben können Ihre Kunden den
               <span class="has-text-weight-semibold has-text-primary">Besuch</span>
-              in Ihrem Lokal <span class="has-text-weight-semibold has-text-primary">selbstständig registrieren</span>.
+              in Ihrem Betrieb <span class="has-text-weight-semibold has-text-primary">selbstständig registrieren</span>.
               Dafür brauchen sie nur ein Smartphone mit einem Web-Browser mit Internetzugriff.
             </div>
             <div class="content is-medium">
@@ -80,7 +80,7 @@
             </p>
             <p class="content is-medium">
               <i class="fas fa-home"></i>
-              Lokal mit Namen und Adresse erfassen
+              Betrieb mit Namen und Adresse erfassen
             </p>
 
             <p>

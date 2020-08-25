@@ -75,11 +75,11 @@
   },
   "locations": {
     "title": {
-      "list":"Lokale",
-      "new": "Lokal erfassen"
+      "list":"Betriebe",
+      "new": "Betrieb erfassen"
     },
     "actions": {
-      "new": "Neues Lokal erfassen",
+      "new": "Neuen Betrieb erfassen",
       "guest_list": "Gästeliste",
       "qr_code": "QR Code anzeigen",
       "qr_code_download": "QR Code herunterladen"
