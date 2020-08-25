@@ -31,6 +31,9 @@ c                    <span class="tag is-danger is-light is-medium">&beta;eta</s
                     <router-link to="/faq" class="navbar-item">
                       {{ $t('title.faq') }}
                     </router-link>
+                  <router-link to="/feedback" class="navbar-item">
+                    {{ $t('title.feedback') }}
+                  </router-link>
                 </div>
 
                 <div class="navbar-end" v-if="hasUser()">
@@ -71,7 +74,7 @@ import {Component, Vue} from 'vue-property-decorator';
 
       private isPublicPage() {
           return [
-              "Home", "Signup", "SignupConfirm", "ResetPassword", "RegisterVisit", "ConfirmVisitEmail", "Faq"
+              "Home", "Signup", "SignupConfirm", "ResetPassword", "RegisterVisit", "ConfirmVisitEmail", "Faq", "Feedback"
           ].indexOf(this.$route.name as string) > -1;
       }
 

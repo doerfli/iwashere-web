@@ -12,6 +12,7 @@ import ResetPasswordView from '@/views/ResetPasswordView.vue';
 import HomeView from '@/views/HomeView.vue';
 import VisitConfirmEmailView from '@/views/VisitConfirmEmailView.vue';
 import FaqView from '@/views/FaqView.vue';
+import FeedbackView from '@/views/FeedbackView.vue';
 
 Vue.use(Router);
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/faq',
       name: 'Faq',
       component: FaqView,
+    },
+    {
+      path: '/feedback',
+      name: 'Feedback',
+      component: FeedbackView,
     },
     {
       path: '/home',

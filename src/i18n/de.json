@@ -8,7 +8,8 @@
     "signup": "Neues Konto erstellen",
     "profile": "Einstellungen",
     "reset_password": "Passwort zurücksetzen",
-    "faq": "Fragen & Antworten"
+    "faq": "Fragen & Antworten",
+    "feedback": "Kontakt"
   },
   "header": {
     "profile": "Einstellungen"
@@ -151,5 +152,13 @@
     "confirming": "Ihre Email Adresse wird bestätigt. Bitte haben Sie einen Moment Geduld.",
     "confirmedTitle": "Bestätigung erfolgreich",
     "confirmedText": "Danke, dass Sie Ihre Email Adresse bestätigt haben. Sie können diese Seite nun schliessen."
+  },
+  "feedback": {
+    "title": "Kontaktanfrage",
+    "name": "Ihr Name",
+    "email": "E-Mail Adresse",
+    "message": "Ihre Nachricht",
+    "submit": "Abschicken",
+    "success": "Danke für Ihre Nachricht. Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen."
   }
 }
