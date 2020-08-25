@@ -36,6 +36,13 @@
                             Was wir jetzt schon sagen können ist, dass der Preis sich nicht an der Anzahl der
                             Kundenbesuche orientieren wird." />
 
+          <Question question="Was bedeutet Beta-Phase?"
+                    answer="Die Applikation befindet sich derzeit noch in der Entwicklung. Wir arbeiten laufend an neuen
+                            Funktionen. Dadurch kann es zu unerwarteten Fehlern oder geringfügigen Einschränkungen im Betrieb
+                            kommen. Wir versuchen natürlich diese Einschränkungen so gering wie möglich zu halten.
+                            Als Beta Kunde erhalten Sie einen speziellen Rabatt, wenn unsere Dienstleistung einmal
+                            kostenpflichtig wird." />
+
           <Question question="Wo werden die Daten gespeichert?"
                     answer="Unsere Server befinden sich in einem Rechenzentrum in der EU. Server in der Schweiz sind
                             für die Zukunft geplant." />
