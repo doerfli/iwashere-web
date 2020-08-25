@@ -13,33 +13,31 @@
             <span class="tag is-danger is-light is-medium">&beta;eta</span>
           </h1>
         </a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+           v-on:click="toggleMenu()" ref="navBurger">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
       </div>
-      <div class="navbar-menu">
+      <div class="navbar-menu" ref="navMenu">
         <div class="navbar-start">
-          <a class="navbar-item">
-            &nbsp;
-          </a>
-          <router-link to="/locations" class="navbar-item" v-if="hasUser()">
+          <router-link to="/locations" class="navbar-item" v-if="hasUser()" @click.native="toggleMenu">
             {{ $t('locations.title.list') }}
           </router-link>
-          <router-link to="/faq" class="navbar-item">
+          <router-link to="/faq" class="navbar-item" @click.native="toggleMenu">
             {{ $t('title.faq') }}
           </router-link>
-          <router-link to="/feedback" class="navbar-item">
+          <router-link to="/feedback" class="navbar-item" @click.native="toggleMenu">
             {{ $t('title.feedback') }}
           </router-link>
         </div>
 
         <div class="navbar-end" v-if="hasUser()">
-          <div class="navbar-item has-dropdown  is-hoverable">
-                        <span class="navbar-link">
-                            {{ getUsername() }}
-                        </span>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <span class="navbar-link">
+                {{ getUsername() }}
+            </span>
 
             <div class="navbar-dropdown">
               <router-link to="/profile" class="navbar-item">
@@ -65,6 +63,11 @@ import {Component, Vue} from 'vue-property-decorator';
 @Component
 export default class Header extends Vue {
 
+  public $refs!: {
+    navMenu: HTMLFormElement,
+    navBurger: HTMLFormElement
+  };
+
   public mounted() {
     if (!this.isPublicPage()) {
       this.$store.dispatch('account/fetchUser');
@@ -87,6 +90,11 @@ export default class Header extends Vue {
 
   private getUsername() {
     return this.$store.state.account.user.username;
+  }
+
+  private toggleMenu() {
+    this.$refs.navMenu.classList.toggle("is-active");
+    this.$refs.navBurger.classList.toggle("is-active");
   }
 }
 </script>
