@@ -22,14 +22,14 @@
       </div>
       <div class="navbar-menu" ref="navMenu">
         <div class="navbar-start">
+          <router-link to="/" class="navbar-item" @click.native="toggleMenu">
+            {{ $t('title.homepage') }}
+          </router-link>
           <router-link to="/locations" class="navbar-item" v-if="hasUser()" @click.native="toggleMenu">
             {{ $t('locations.title.list') }}
           </router-link>
           <router-link to="/faq" class="navbar-item" @click.native="toggleMenu">
             {{ $t('title.faq') }}
-          </router-link>
-          <router-link to="/feedback" class="navbar-item" @click.native="toggleMenu">
-            {{ $t('title.feedback') }}
           </router-link>
         </div>
 
