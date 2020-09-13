@@ -56,6 +56,10 @@
               Die Daten werden auf unserem Server (Serverstandort in der EU) gespeichert und
               <span class="has-text-weight-semibold has-text-primary">nach 14 Tagen automatisch gelöscht</span>.
             </div>
+            <div class="content is-medium">
+              Neugierig geworden? Dann <router-link to="/demo">probieren Sie unsere Demo</router-link> oder melden
+              Sie sich gratis für ein <router-link to="/signup">Konto</router-link> an.
+            </div>
           </div>
         </div>
 

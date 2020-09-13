@@ -31,6 +31,9 @@
           <router-link to="/faq" class="navbar-item" @click.native="toggleMenu">
             {{ $t('title.faq') }}
           </router-link>
+          <router-link to="/demo" v-if="!hasUser()" class="navbar-item" @click.native="toggleMenu">
+            {{ $t('title.demo') }}
+          </router-link>
         </div>
 
         <div class="navbar-end" v-if="hasUser()">
