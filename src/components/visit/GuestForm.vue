@@ -20,11 +20,23 @@
                     :error-text="$t('visit.phone_not_valid')"
                     v-bind:show-error-text="!phoneValid"
     />
+    <TextInputField :label="$t('visit.tableNumber')" v-model="tableNumber"
+                    type="text"
+                    icon-left="sign"
+                    v-on:inputchanged="$emit('formchanged')"
+                    v-if="isShowTableNumber()"
+    />
+    <TextInputField :label="$t('visit.sector')" v-model="sector"
+                    type="text"
+                    icon-left="sign"
+                    v-on:inputchanged="$emit('formchanged')"
+                    v-if="isShowSector()"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import {Component, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 import TextInputField from '@/components/form/TextInputField.vue';
 import {EMAIL_REGEX} from '@/constants';
 
@@ -34,25 +46,32 @@ import {EMAIL_REGEX} from '@/constants';
   }
 })
 export default class GuestForm extends Vue {
+  @Prop({default: false})
+  private showTableNumber!: boolean;
+  @Prop({default: false})
+  private showSector!: boolean;
   private name: string = '';
   private nameValid: boolean = true;
   private phone: string = '';
   private phoneValid: boolean = true;
   private email: string = '';
   private emailValid: boolean = true;
+  private tableNumber: string|null = null;
+  private sector: string|null = null;
 
 
   public getFormData() {
     return {
       name: this.name,
       phone: this.phone,
-      email: this.email
+      email: this.email,
+      tableNumber: this.tableNumber,
+      sector: this.sector,
     };
   }
 
   public isValid(): boolean {
     return this.name !== "" && this.emailValid && this.phoneValid && this.nameValid;
-
   }
 
   public reset() {
@@ -62,6 +81,8 @@ export default class GuestForm extends Vue {
     this.phoneValid = true;
     this.email = '';
     this.emailValid = true;
+    this.tableNumber = null;
+    this.sector = null;
   }
 
   private checkEmailValid() {
@@ -76,6 +97,13 @@ export default class GuestForm extends Vue {
     this.phoneValid = this.phone !== "";
   }
 
+  private isShowTableNumber() {
+    return this.showTableNumber;
+  }
+
+  private isShowSector() {
+    return this.showSector;
+  }
 }
 </script>
 

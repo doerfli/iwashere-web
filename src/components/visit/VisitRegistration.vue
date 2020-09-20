@@ -5,7 +5,10 @@
     <div class="notification is-info" v-if="!dataSubmitted">
       {{$t('visit.data_submitted_retention_policy')}}
     </div>
-    <GuestForm ref="form"/>
+    <GuestForm ref="form"
+               :show-table-number="this.$store.state.visit.location.useTableNumber"
+               :show-sector="this.$store.state.visit.location.useSector"
+    />
     <div class="field is-grouped" v-if="!this.dataSubmitted">
       <div class="control">
         <button class="button is-primary" v-on:click="saveVisit()" v-bind:disabled="!formValid()">{{$t("actions.register")}}</button>

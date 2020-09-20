@@ -6,6 +6,8 @@ interface VisitEntity {
   visitTimestamp: string;
   verifiedEmail: boolean;
   verifiedPhone: boolean;
+  tableNumber: string;
+  sector: string;
 }
 
 export default VisitEntity;
