@@ -93,7 +93,9 @@
     "street": "Strasse",
     "zip": "Postleitzahl",
     "city": "Stadt",
-    "country": "Land"
+    "country": "Land",
+    "useTableNumber": "Gast kann Tischnummer erfassen",
+    "useSector": "Gast kann Sektor erfassen"
   },
   "actions": {
     "save": "Speichern",

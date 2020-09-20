@@ -13,12 +13,12 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import {request} from '@/superagent';
-  import LocationEntity from '@/model/locationentity';
-  import LocationForm from '@/components/locations/LocationForm.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import {request} from '@/superagent';
+import LocationEntity from '@/model/locationentity';
+import LocationForm from '@/components/locations/LocationForm.vue';
 
-  @Component({
+@Component({
     components: {LocationForm}
   })
   export default class NewLocation extends Vue {
@@ -26,7 +26,10 @@
       locationForm: HTMLFormElement
     };
 
-    private location: LocationEntity = { id: null, name: "", shortname: "", street: "", zip: "", city: "", country: ""};
+    private location: LocationEntity = {
+      id: null, name: "", shortname: "", street: "", zip: "", city: "", country: "",
+      useTableNumber: false, useSector: false
+    };
     private formValid: boolean = false;
 
     private async save() {

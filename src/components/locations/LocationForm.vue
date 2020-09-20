@@ -12,18 +12,22 @@
     <TextInputField :label="$t('locations.city')" v-model="location.city" v-on:inputchanged="$emit('formchanged')"/>
     <TextInputField :label="$t('locations.country')" v-model="location.country"
                     v-on:inputchanged="$emit('formchanged')"/>
+    <CheckboxField :label="$t('locations.useTableNumber')" v-model="location.useTableNumber" v-on:inputchanged="$emit('formchanged')" />
+    <CheckboxField :label="$t('locations.useSector')" v-model="location.useSector" v-on:inputchanged="$emit('formchanged')" />
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import TextInputField from '@/components/form/TextInputField.vue';
+import CheckboxField from '@/components/form/CheckboxField.vue';
 import LocationEntity from '@/model/locationentity';
 import {request} from '@/superagent';
 
 @Component({
   components: {
-    TextInputField
+    TextInputField,
+    CheckboxField,
   }
 })
 export default class LocationForm extends Vue {

@@ -6,6 +6,8 @@ interface LocationEntity {
   zip: string;
   city: string;
   country: string;
+  useTableNumber: boolean;
+  useSector: boolean;
 }
 
 export default LocationEntity;
