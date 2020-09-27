@@ -20,6 +20,26 @@
                     :error-text="$t('visit.phone_not_valid')"
                     v-bind:show-error-text="!phoneValid"
     />
+    <TextInputField :label="$t('visit.street')" v-model="street"
+                    type="text"
+                    icon-left="map-marked"
+                    v-on:inputchanged="$emit('formchanged')"
+    />
+    <TextInputField :label="$t('visit.zip')" v-model="zip"
+                    type="text"
+                    icon-left="city"
+                    v-on:inputchanged="$emit('formchanged')"
+    />
+    <TextInputField :label="$t('visit.city')" v-model="city"
+                    type="text"
+                    icon-left="city"
+                    v-on:inputchanged="$emit('formchanged')"
+    />
+    <TextInputField :label="$t('visit.country')" v-model="country"
+                    type="text"
+                    icon-left="flag"
+                    v-on:inputchanged="$emit('formchanged')"
+    />
     <TextInputField :label="$t('visit.tableNumber')" v-model="tableNumber"
                     type="text"
                     icon-left="sign"
@@ -56,6 +76,10 @@ export default class GuestForm extends Vue {
   private phoneValid: boolean = true;
   private email: string = '';
   private emailValid: boolean = true;
+  private street: string|null = null;
+  private zip: string|null = null;
+  private city: string|null = null;
+  private country: string|null = null;
   private tableNumber: string|null = null;
   private sector: string|null = null;
 
@@ -65,6 +89,10 @@ export default class GuestForm extends Vue {
       name: this.name,
       phone: this.phone,
       email: this.email,
+      street: this.street,
+      zip: this.zip,
+      city: this.city,
+      country: this.country,
       tableNumber: this.tableNumber,
       sector: this.sector,
     };
@@ -81,6 +109,10 @@ export default class GuestForm extends Vue {
     this.phoneValid = true;
     this.email = '';
     this.emailValid = true;
+    this.street = null;
+    this.zip = null;
+    this.city = null;
+    this.country = null;
     this.tableNumber = null;
     this.sector = null;
   }
