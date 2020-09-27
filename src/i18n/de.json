@@ -132,13 +132,15 @@
     "table_title": "Gäste am {date}",
     "name": "Name",
     "email": "E-Mail",
+    "contact_data": "Kontaktdaten",
     "verified": "Bestätigt",
     "not_verified": "Nicht bestätigt",
     "phone": "Telefonnummer",
     "empty": "Bitte wählen Sie ein Datum",
     "export_csv": "Export als CSV Datei",
     "export_xls": "Export als Excel Datei",
-    "verify": "Bestätigen"
+    "verify": "Bestätigen",
+    "address": "Addresse"
   },
   "profile": {
     "change_password": {

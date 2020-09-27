@@ -6,13 +6,16 @@
       </tr>
       <tr>
         <th>{{$t('guestlist.name')}}</th>
-        <th>{{$t('guestlist.email')}}</th>
-        <th>{{$t('guestlist.phone')}}</th>
+        <th>{{$t('guestlist.contact_data')}}</th>
+        <th>&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       <td v-if="getVisits().length === 0" colspan="3">{{$t('guestlist.empty')}}</td>
-      <Guest v-for="visit in getVisits()" v-bind:key="visit.id" v-bind:visit="visit" />
+      <template v-for="visit in getVisits()" >
+        <Guest v-bind:visit="visit" />
+        <GuestAddress v-bind:visit="visit" v-if="hasAddress(visit)"/>
+      </template>
     </tbody>
   </table>
 </template>
@@ -22,11 +25,16 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import VisitEntity from '@/model/visitentity';
 import Guest from '@/components/guestlist/Guest.vue';
 import moment from 'moment';
+import GuestAddress from '@/components/guestlist/GuestAddress.vue';
 
 @Component({
-    components: {Guest}
+    components: {GuestAddress, Guest}
   })
   export default class Guests extends Vue {
+    private static isEmpty(str: string|null) {
+      return (!str || 0 === str.length);
+    }
+
     @Prop()
     private visits!: VisitEntity[];
     @Prop()
@@ -39,7 +47,15 @@ import moment from 'moment';
     private getVisits() {
       return this.visits;
     }
-  }
+
+    private hasAddress(guest: VisitEntity): boolean {
+      return ! Guests.isEmpty(guest.guest_street)
+          || ! Guests.isEmpty(guest.guest_zip)
+          || ! Guests.isEmpty(guest.guest_city)
+          || ! Guests.isEmpty(guest.guest_country);
+    }
+
+}
 </script>
 
 <style scoped>

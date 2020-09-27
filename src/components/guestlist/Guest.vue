@@ -4,7 +4,7 @@
       {{getGuest().guest_name}}
     </td>
     <td>
-      <fragment v-if="hasEmail()">
+      <template v-if="hasEmail()">
         <span :class="{ icon: true, 'has-text-success': emailVerified(), 'has-text-danger': !emailVerified(), 'has-tooltip-left': true}"
               :data-tooltip="emailVerifiedText()">
           <i class="fas fa-envelope"></i>
@@ -18,10 +18,10 @@
             </a>
           </small>
         </span>
-      </fragment>
+      </template>
     </td>
     <td>
-      <fragment v-if="hasPhone()">
+      <template v-if="hasPhone()">
         <span :class="{ icon: true, 'has-text-success': phoneVerified(), 'has-text-danger': !phoneVerified(), 'has-tooltip-left': true}"
               :data-tooltip="phoneVerifiedText()">
           <i class="fas fa-phone"></i>
@@ -34,7 +34,7 @@
             </a>
           </small>
         </span>
-      </fragment>
+      </template>
     </td>
   </tr>
 </template>
@@ -42,13 +42,10 @@
 <script lang="ts">
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import VisitEntity from '@/model/visitentity';
-// @ts-ignore
-import {Fragment} from 'vue-fragment';
 import superagent from 'superagent';
 
 @Component({
     components: {
-      Fragment
     }
   })
   export default class Guest extends Vue {
@@ -102,16 +99,17 @@ import superagent from 'superagent';
       }
     }
 
-  private async confirmPhone() {
-    try {
-      const response = await superagent.put(`/api/visits/${this.visit.id}/verify/phone`).send();
-      if (response.status === 200) {
-        await this.$store.dispatch("locations/confirmPhone", { id: this.visit.id });
+    private async confirmPhone() {
+      try {
+        const response = await superagent.put(`/api/visits/${this.visit.id}/verify/phone`).send();
+        if (response.status === 200) {
+          await this.$store.dispatch("locations/confirmPhone", { id: this.visit.id });
+        }
+      } catch (e) {
+        console.log(e);
       }
-    } catch (e) {
-      console.log(e);
     }
-  }
+
   }
 </script>
 
