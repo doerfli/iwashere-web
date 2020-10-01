@@ -1,3 +1,176 @@
 {
-
+    "umlaut": "a o u A O U",
+    "title": {
+      "application": "I was there",
+      "homepage": "home page",
+      "home": "Digital guest list online",
+      "home_sub": "Simple contact tracing for restFITaurant, bar, club, ...",
+      "login": "Login for registered users",
+      "signup": "Create a new account",
+      "profile": "Settings",
+      "reset_password": "reset password",
+      "faq": "Questions & Answers",
+      "feedback": "Contact",
+      "demo": "Demo"
+    },
+    "header": {
+      "profile": "Settings"
+    },
+    "home": {
+      "signup_success": "Your account has been created. You will shortly receive an email with important information.",
+      "password_reset_success": ""
+    },
+    "Log in": {
+      "username": {
+        "label": "Username",
+        "hint": "Please enter your username here"
+      },
+      "password": {
+        "label": "Password",
+        "hint": "Enter your password here"
+      },
+      "loginbutton": "Login",
+      "form_incomplete": "Please fill out your username and password and then log in again.",
+      "login_error": "The username or password was wrong. Please try again.",
+      "account_not_confirmed": "Your account has not yet been confirmed. An email with information has been sent to your email address.",
+      "signup_link": "Create a new account",
+      "forgotten_password": {
+        "link": "Forgot password",
+        "username_empty": "Please enter username",
+        "reset_sent": "You will shortly receive an email with instructions on how to reset your password.",
+        "error": "An unexpected error occurred while resetting your password. Please try again later."
+      }
+    },
+    "reset_password": {
+      "submit": "save password",
+      "error": "An unexpected error occurred while resetting your password. Please try again later.",
+      "reset_success": "Your new password has been set successfully. You can now log in.",
+      "invalid_token": "The link to reset the password is invalid.",
+      "token_expired": "The link to reset your password has expired. Please try again."
+    },
+    "signup": {
+      "username": {
+        "label": "e-mail address",
+        "hint": "Your email address is your username"
+      },
+      "password": {
+        "label": "Password",
+        "hint": "Enter your password here"
+      },
+      "passwordConfirmation": {
+        "label": "Confirm password",
+        "hint": "Enter your password again to confirm"
+      },
+      "submitButton": "Register",
+      "form_incomplete": "Please fill out your username and password and then log in again.",
+      "passwords_dontmatch": "The entered passwords do not match.",
+      "password_too_short": "The password must be at least {length} characters long",
+      "signup_error": "An error occurred during registration. Please try again.",
+      "email_invalid": "Please enter a valid email address."
+    },
+    "signupConfirm": {
+      "confirming": "Your registration is being confirmed ...",
+      "confirm_success": "Your account has been successfully confirmed. You can now log in.",
+      "invalid_token": "The link is invalid.",
+      "token_expired": "The link is no longer valid. Please register again.",
+      "error": "An unexpected error occurred while verifying your account. Please try again later."
+    },
+    "locations": {
+      "title": {
+        "list": "companies",
+        "new": "record company"
+      },
+      "actions": {
+        "new": "Record new company",
+        "guest_list": "Guest list",
+        "qr_code": "Show QR Code",
+        "qr_code_download": "Download QR Code"
+      },
+      "name": "Name",
+      "shortname": "short name",
+      "shortname_hint": "This name appears in the link that the customers use",
+      "shortname_not_available": "This short name is not available",
+      "street": "Strasse",
+      "zip": "zip code",
+      "city": "city",
+      "country": "Country",
+      "useTableNumber": "Guest can enter table number",
+      "useSector": "Guest can enter sector"
+    },
+    "actions": {
+      "save": "save",
+      "cancel": "Cancel",
+      "register": "Register",
+      "back": "back"
+    },
+    "visit": {
+      "title": {
+        "welcome": "Welcome to the {name}",
+        "registration": "Registration of your visit"
+      },
+      "name": "Name",
+      "name_not_valid": "Name must be entered",
+      "phone": "phone number",
+      "phone_not_valid": "Phone number must be entered",
+      "email": "E-Mail",
+      "email_not_valid": "This email address is invalid",
+      "street": "Strasse",
+      "zip": "zip code",
+      "city": "city",
+      "country": "Country",
+      "tableNumber": "table number",
+      "sector": "sector",
+      "data_submitted": "Thank you for leaving your contact details with us.",
+      "data_submitted_retention_policy ":" All recorded data will be automatically deleted after 14 days. ",
+      "data_submission_error": "An unexpected error occurred while submitting the data. Please try again.",
+    "reset_form": "delete form",
+    "register_next": "Register another visitor"
+  },
+  "guestlist": {
+    "title": "guest list",
+    "guests": "guests",
+    "table_title": "Guests on {date}",
+    "name": "Name",
+    "email": "E-Mail",
+    "contact_data": "Contact details",
+    "verified": "confirmed",
+    "not_verified": "Not confirmed",
+    "phone": "phone number",
+    "empty": "Please select a date",
+    "export_csv": "Export as CSV file",
+    "export_xls": "Export as Excel file",
+    "verify": "Confirm",
+    "address": "Address"
+  },
+  "profile": {
+    "change_password": {
+      "title": "Change password",
+      "old_password": "Old password",
+      "old_password_hint": "Please enter your previous password",
+      "password": "New password",
+      "password_hint": "Enter your new password here",
+      "password_too_short": "The new password must be at least {length} characters long",
+      "passwordConfirmation": "Confirm password",
+      "passwordConfirmation_hint": "Enter your password again",
+      "passwords_dontmatch": "The entered passwords do not match.",
+      "form_incomplete": "Please fill out the fields completely",
+      "password_change_failed": "An error occurred while changing your password, your old password may be incorrect",
+      "change_error": "An error occurred while changing the password.",
+      "submitButton": "Save new password",
+      "password_changed": "Your password has been changed"
+    }
+  },
+  "visitConfirm": {
+    "confirming": "Your email address is being confirmed. Please wait a moment.",
+    "confirmedTitle": "Confirmation successful",
+    "confirmedText": "Thank you for confirming your email address. You can now close this page."
+  },
+  "feedback": {
+    "title": "Contact request",
+    "name": "your name",
+    "email": "email address",
+    "message": "your message",
+    "submit": "Submit",
+    "success": "Thank you for your message. We will contact you as soon as possible."
+  }
 }
