@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="hero is-hidden-mobile ">
+    <section class="hero  is-hidden-mobile ">
       <div class="hero-body">
         <div class="container">
           <h1 class="title has-text-primary">
@@ -52,12 +52,12 @@
               Dafür brauchen sie nur ein Smartphone mit einem Web-Browser mit Internetzugriff.
             </div>
             <div class="content is-medium">
-              Natürlich können Sie die Gästeliste jederzeit online einsehen und bei Bedarf exportieren.
+              Natürlichen können Sie die Gästeliste jederzeit online einsehen und bei Bedarf exportieren.
               Die Daten werden auf unserem Server (Serverstandort in der EU) gespeichert und
               <span class="has-text-weight-semibold has-text-primary">nach 14 Tagen automatisch gelöscht</span>.
             </div>
             <div class="content is-medium">
-              Neugierig geworden? Dann <router-link to="/demo">probieren Sie unsere Demo aus</router-link> oder melden
+              Neugierig geworden? Dann <router-link to="/demo">probieren Sie unsere Demo</router-link> oder melden
               Sie sich gratis für ein <router-link to="/signup">Konto</router-link> an.
             </div>
           </div>
@@ -94,7 +94,7 @@
             </p>
             <p class="content is-medium">
               <i class="fas fa-qrcode"></i>
-              QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen können) aufhängen.
+              QR-Code ausdrucken und am Eingang (oder am Tisch, an der Wand oder wo auch immer die Kunden ihn sehen koennen) aufhaengen.
             </p>
 
             <p>
@@ -125,7 +125,7 @@ import IchWarDaTitle from '@/components/IchWarDaTitle.vue';
 @Component({
       components: {
         IchWarDaTitle,
-        Login
+          Login
       }
   })
   export default class LoginView extends Vue {

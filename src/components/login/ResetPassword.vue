@@ -18,7 +18,7 @@
       {{$t('reset_password.error')}}
     </div>
     <div>
-      <router-link to="/home">{{$t('actions.back')}}</router-link>
+      <router-link to="/login">{{$t('actions.back')}}</router-link>
     </div>
   </div>
 </template>

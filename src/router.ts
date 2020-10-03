@@ -9,7 +9,7 @@ import LocationQrcodeView from '@/views/LocationQrcodeView.vue';
 import SignupConfirmView from '@/views/SignupConfirmView.vue';
 import ProfileView from '@/views/ProfileView.vue';
 import ResetPasswordView from '@/views/ResetPasswordView.vue';
-import HomeView from '@/views/HomeView.vue';
+import LoginView from '@/views/LoginView.vue';
 import VisitConfirmEmailView from '@/views/VisitConfirmEmailView.vue';
 import FaqView from '@/views/FaqView.vue';
 import FeedbackView from '@/views/FeedbackView.vue';
@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: HomeView,
+      component: LoginView,
     },
     {
       path: '/demo',
@@ -40,9 +40,9 @@ export default new Router({
       component: FeedbackView,
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: HomeView,
+      path: '/login',
+      name: 'Login',
+      component: LoginView,
     },
     {
       path: '/locations',

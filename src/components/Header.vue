@@ -46,7 +46,7 @@
               <router-link to="/profile" class="navbar-item">
                 {{ $t('header.profile') }}
               </router-link>
-              <router-link to="/home" class="navbar-item">
+              <router-link to="/login" class="navbar-item">
                 Logout
               </router-link>
             </div>
