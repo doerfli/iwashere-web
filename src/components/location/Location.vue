@@ -1,14 +1,24 @@
 <template>
   <div>
     <h2 class="title is-2">{{ getLocation().name }}</h2>
-    <div class="tabs">
-      <ul>
-        <li :class="{'is-active': getActiveTab() === 'guestlist'}"><a v-on:click="setActiveTab('guestlist')">{{ $t("location.tabs.guestlist") }}</a></li>
-        <li :class="{'is-active': getActiveTab() === 'details'}"><a v-on:click="setActiveTab('details')">{{ $t("location.tabs.details") }}</a></li>
-      </ul>
-    </div>
-    <Guestlist :shortname="getShortname()" v-if="getActiveTab() === 'guestlist'"/>
-    <LocationDetails :shortname="getShortname()" v-if="getActiveTab() === 'details'"/>
+    <Tabs>
+      <TabItem
+          name="guestlist"
+          :active="isTabGuestlistActive()"
+          :title="$t('location.tabs.guestlist')"
+          v-on:tabSelected="setActiveTab($event)"
+      />
+      <TabItem
+          name="details"
+          :active="isTabDetailsActive()"
+          :title="$t('location.tabs.details')"
+          v-on:tabSelected="setActiveTab($event)"
+      />
+      <template v-slot:content>
+        <Guestlist :shortname="getShortname()" v-if="isTabGuestlistActive()"/>
+        <LocationDetails :shortname="getShortname()" v-if="isTabDetailsActive()"/>
+      </template>
+    </Tabs>
   </div>
 </template>
 
@@ -16,9 +26,11 @@
 import {Component, Prop, Vue} from 'vue-property-decorator';
 import Guestlist from '@/components/guestlist/Guestlist.vue';
 import LocationDetails from '@/components/location/LocationDetails.vue';
+import Tabs from '@/components/common/tabs/Tabs.vue';
+import TabItem from '@/components/common/tabs/TabItem.vue';
 
 @Component({
-    components: {LocationDetails, Guestlist}
+    components: {TabItem, Tabs, LocationDetails, Guestlist}
   })
   export default class Location extends Vue {
     @Prop({default: ""})
@@ -38,11 +50,16 @@ import LocationDetails from '@/components/location/LocationDetails.vue';
     }
 
     private setActiveTab(tab: string) {
+      console.log(tab);
       this.activeTab = tab;
     }
 
-    private getActiveTab() {
-      return this.activeTab;
+    private isTabDetailsActive() {
+      return this.activeTab === "details";
+    }
+
+    private isTabGuestlistActive() {
+      return this.activeTab === "guestlist";
     }
   }
 </script>
