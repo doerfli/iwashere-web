@@ -84,7 +84,8 @@
       "new": "Neuen Betrieb erfassen",
       "guest_list": "Gästeliste",
       "qr_code": "QR Code anzeigen",
-      "qr_code_download": "QR Code herunterladen"
+      "qr_code_download": "QR Code herunterladen",
+      "details": "Details"
     },
     "name": "Name",
     "shortname": "Kurzbezeichnung",
@@ -96,6 +97,12 @@
     "country": "Land",
     "useTableNumber": "Gast kann Tischnummer erfassen",
     "useSector": "Gast kann Sektor erfassen"
+  },
+  "location": {
+    "tabs": {
+      "guestlist": "Gästeliste",
+      "details": "Stammdaten"
+    }
   },
   "actions": {
     "save": "Speichern",

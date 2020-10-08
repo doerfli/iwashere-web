@@ -14,6 +14,7 @@ import VisitConfirmEmailView from '@/views/VisitConfirmEmailView.vue';
 import FaqView from '@/views/FaqView.vue';
 import FeedbackView from '@/views/FeedbackView.vue';
 import DemoView from '@/views/DemoView.vue';
+import LocationView from '@/views/LocationView.vue';
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/locations',
       name: 'Locations',
       component: LocationsView,
+    },
+    {
+      path: '/location/:shortname',
+      name: 'LocationView',
+      component: LocationView,
     },
     {
       path: '/locations/new',
