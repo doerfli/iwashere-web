@@ -2,7 +2,7 @@
     <div>
         <table class="table is-striped is-hoverable is-fullwidth">
             <tbody>
-                <Location
+                <LocationLine
                     v-for="location in locations()" v-bind:key="location.id" v-bind:loc="location" />
             </tbody>
         </table>
@@ -10,12 +10,12 @@
 </template>
 
 <script lang="ts">
-  import {Component, Vue} from 'vue-property-decorator';
-  import Location from '@/components/locations/Location.vue';
+import {Component, Vue} from 'vue-property-decorator';
+import LocationLine from '@/components/locations/LocationLine.vue';
 
-  @Component({
+@Component({
     components: {
-      Location
+      LocationLine
     },
   })
   export default class Locations extends Vue {

@@ -1,5 +1,5 @@
 <template>
-  <tr v-on:click="this.console.log('1');">
+  <tr>
     <td class="is-vcentered">
       {{ this.loc.name }}
     </td>
@@ -27,7 +27,7 @@ import {Component, Prop, Vue} from 'vue-property-decorator';
 import LocationEntity from '@/model/locationentity';
 
 @Component
-export default class Location extends Vue {
+export default class LocationLine extends Vue {
   @Prop()
   private loc!: LocationEntity;
 
