@@ -1,6 +1,24 @@
 <template>
   <div>
-    <h2 class="title is-2">{{ getLocation().name }}</h2>
+    <div class="columns">
+      <div class="column">
+        <h2 class="title is-2">{{ getLocation().name }}</h2>
+      </div>
+      <div class="column is-one-fifth">
+        <div class="field is-grouped is-pulled-right">
+          <p class="control">
+            <router-link to="/locations" >
+              <button class="button is-link is-small">
+            <span class="icon is-small">
+              <i class="fas fa-arrow-left"></i>
+            </span>
+                <span>{{$t('actions.back')}}</span>
+              </button>
+            </router-link>
+          </p>
+        </div>
+      </div>
+    </div>
     <Tabs>
       <TabItem
           name="guestlist"
