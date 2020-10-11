@@ -55,6 +55,9 @@ const locationsModule: Module<any, any> = {
       // console.log(resp);
       commit('set', { location: resp.body as LocationEntity });
     },
+    async setLocation({commit}, payload) {
+      commit('set', { location: payload.location });
+    },
     async getDates({commit}, payload) {
       // console.log("getDates");
       const resp = await request.get(`/api/visits/${payload.shortname}/dates`);
