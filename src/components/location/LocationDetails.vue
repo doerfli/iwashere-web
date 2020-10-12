@@ -58,6 +58,7 @@
     <LocationForm :location="getEditLocation()"
                   v-if="editMode"
                   ref="locationForm"
+                  shortcode-read-only="true"
     />
   </div>
 </template>

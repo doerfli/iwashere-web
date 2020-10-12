@@ -68,7 +68,7 @@ import TabItem from '@/components/common/tabs/TabItem.vue';
     }
 
     private setActiveTab(tab: string) {
-      console.log(tab);
+      // console.log(tab);
       this.activeTab = tab;
     }
 

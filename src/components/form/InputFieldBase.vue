@@ -1,9 +1,9 @@
 
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 
-  @Component
+@Component
   export default class InputFieldBase extends Vue {
     @Prop()
     private label!: string;
@@ -19,6 +19,8 @@
     private hintText!: string;
     @Prop()
     private iconLeft!: string;
+    @Prop({default: false})
+    private readOnly!: boolean;
 
     protected getLabel() {
       return this.label;
@@ -61,6 +63,10 @@
       if (event.key === 'Enter') {
         this.$emit('enterPressed');
       }
+    }
+
+    protected isReadOnly(): boolean {
+      return this.readOnly;
     }
   }
 </script>

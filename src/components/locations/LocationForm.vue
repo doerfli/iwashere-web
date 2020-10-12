@@ -6,6 +6,7 @@
                     :info-text="$t('locations.shortname_hint') + ' - http:\/\/bladiblubb.com\/#\/v\/' + this.location.shortname + '/'"
                     :error-text="$t('locations.shortname_not_available')"
                     v-bind:show-error-text="!shortnameAvailable"
+                    :read-only="isShortcodeReadOnly()"
     />
     <TextInputField :label="$t('locations.street')" v-model="location.street" v-on:inputchanged="$emit('formchanged')"/>
     <TextInputField :label="$t('locations.zip')" v-model="location.zip" v-on:inputchanged="$emit('formchanged')"/>
@@ -33,6 +34,8 @@ import {request} from '@/superagent';
 export default class LocationForm extends Vue {
   @Prop()
   private location!: LocationEntity;
+  @Prop({default: false})
+  private shortcodeReadOnly!: boolean;
   private shortnameAvailable: boolean = true;
 
   public isFormValid() {
@@ -55,6 +58,10 @@ export default class LocationForm extends Vue {
     } catch (e) {
       this.shortnameAvailable = true;
     }
+  }
+
+  private isShortcodeReadOnly() {
+    return this.shortcodeReadOnly;
   }
 
 }

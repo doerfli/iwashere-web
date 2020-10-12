@@ -4,7 +4,9 @@
       <label class="checkbox">
         <input type="checkbox"
                v-bind:checked="isChecked"
-               v-on:click="toggle($event)" />
+               v-on:click="toggle($event)"
+               :disabled="isReadOnly()"
+        />
         {{ this.getLabel() }}
       </label>
     </div>

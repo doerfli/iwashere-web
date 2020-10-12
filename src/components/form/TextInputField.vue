@@ -9,6 +9,7 @@
              v-on:input="$emit('input', $event.target.value)"
              v-on:change="$emit('inputchanged', value)"
              v-on:keypress="submitOnEnter($event)"
+             :disabled="isReadOnly()"
       />
       <span class="icon is-small is-left" v-if="hasIconLeft()">
         <i :class="getIconLeftClasses()"></i>

@@ -8,6 +8,7 @@
                    v-on:input="$emit('input', $event.target.value)"
                    v-on:change="$emit('inputchanged', value)"
                    v-on:keypress="submitOnEnter($event)"
+                   :disabled="isReadOnly()"
             />
             <span class="icon is-small is-left" v-if="hasIconLeft()">
               <i :class="getIconLeftClasses()"></i>
@@ -19,10 +20,10 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
-  import InputFieldBase from '@/components/form/InputFieldBase.vue';
+import {Component} from 'vue-property-decorator';
+import InputFieldBase from '@/components/form/InputFieldBase.vue';
 
-  @Component
+@Component
   export default class PasswordInputField extends InputFieldBase {
 
   }

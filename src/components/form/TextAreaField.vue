@@ -9,6 +9,7 @@
                 v-on:input="$emit('input', $event.target.value)"
                 v-on:change="$emit('inputchanged', value)"
                 v-on:keypress="submitOnEnter($event)"
+                :disabled="isReadOnly()"
       />
     </div>
     <p class="help is-danger" v-if="isShowErrorText()">{{getErrorText()}}</p>
