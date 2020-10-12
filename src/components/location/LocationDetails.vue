@@ -16,6 +16,7 @@
       <p class="control" v-if="editMode">
         <button class="button is-small is-link"
                 v-on:click="save()"
+                :disabled="!formValid"
                 >
           <span class="icon is-small">
             <i class="fas fa-save"></i>
@@ -54,9 +55,9 @@
         <dd class="mb-2">{{this.getLocation().country}}</dd>
       </dl>
     </div>
-    <!-- TODO validate and enable/disable buttons -->
     <LocationForm :location="getEditLocation()"
                   v-if="editMode"
+                  v-on:formchanged="validate()"
                   ref="locationForm"
                   shortcode-read-only="true"
     />
@@ -79,6 +80,8 @@ import {request} from '@/superagent';
 
     private editMode: boolean = false;
     private editLocation!: LocationEntity;
+    private formValid: boolean = false;
+
 
     private getLocation(): LocationEntity {
       return this.$store.state.locations.location;
@@ -104,6 +107,10 @@ import {request} from '@/superagent';
           "/api/locations"
       ).send({ entity: data });
       await this.$store.dispatch("locations/setLocation", { location: response.body.entity });
+    }
+
+    private validate() {
+      this.formValid = this.$refs.locationForm.isFormValid();
     }
 
   }
