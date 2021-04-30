@@ -1,3 +1,5 @@
+**This project is archived and no longer maintained**
+
 # iwashere-web - 'I was here' frontend application
 
 _Iwashere-web_ is the frontend for the contact tracing web application _Iwashere_. It can be used by restaurants, cafes, 
