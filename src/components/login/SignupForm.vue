@@ -73,7 +73,7 @@ import PasswordFormFields from '@/components/login/PasswordFormFields.vue';
           password: this.$refs.passwordFields.getPassword()
         });
         if (response.status === 200) {
-          await router.push({name: 'Home', query: { signup: 'true' }});
+          await router.push({name: 'Login', query: { signup: 'true' }});
         } else {
           this.showSignupError = true;
         }
